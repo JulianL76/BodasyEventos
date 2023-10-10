@@ -76,18 +76,17 @@ html {
 
 #menu li {
     text-align: center;
+    margin-right: 1px; /* Agrega margen derecho para separar los elementos */
+}
+
+#menu li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
 }
 
 #menu li a {
     display: block;
-    padding: 10px;
+    padding: 10px 2px; /* Ajusta el padding para controlar el espacio horizontal y vertical */
     text-decoration: none;
-}
-
-#menu-toggle {
-    display: block;
-    text-align: right;
-    cursor: pointer;
 }
 
 .nav-responsive {
@@ -98,8 +97,6 @@ html {
     cursor: pointer;
     display: none;
 }
-
-
 
 
 /* INICIO */
@@ -161,7 +158,29 @@ html {
     .contenedor-header header nav ul li a{
         color:#ffffff
     }
+
+    .contenedor-header header .logo a {
+        font-size: 24px; /* Tamaño reducido para dispositivos móviles */
+    }
+    .contenedor-header header .logo h6 {
+        font-size: 12px; /* Tamaño reducido para dispositivos móviles */
+    }
+
+    .inicio {
+        background-size: contain; /* Cambia el tamaño de fondo a 'contain' en lugar de 'cover' */
+        background-position: center; /* Centra la imagen de fondo */
+    }
+
+
 }
 
 
 
+@media screen and (max-width:432px){
+    .contenedor-header header .logo a {
+        font-size: 17px; /* Tamaño reducido para dispositivos móviles */
+    }
+    .contenedor-header header .logo h6 {
+        font-size: 10px; /* Tamaño reducido para dispositivos móviles */
+    }
+}
