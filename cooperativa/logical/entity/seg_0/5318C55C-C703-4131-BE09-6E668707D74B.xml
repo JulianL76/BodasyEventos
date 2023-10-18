@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5318C55C-C703-4131-BE09-6E668707D74B" name="Prestamo">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:55:03 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="número_de_prestamo" id="007CB096-3969-D508-9195-3D5C81823567">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:55:42 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_de_inicio" id="F4070B5B-07E5-A720-7D4D-66927EEE1BB0">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:56:26 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="487EC23E-2BA0-18A0-42BC-358A556E2930">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:57:31 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cuota_mensual" id="9729E91C-2251-8739-4C0F-1CFED227C1E3">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:57:50 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="plazo_en_meses" id="4F4FF047-205C-D768-268D-A307A5846ECB">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:58:16 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cédula" id="8497327E-38EE-E6A2-7CCE-2C49BEDCF1E8">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:20:48 UTC</createdTime>
+<generatorID>9F630D49-69FE-487F-82B5-4D02187005A2</generatorID>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<referedAttribute>806E459E-3A2E-66CE-563B-2CF80A765BFF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cédula1" id="56510E80-74BA-8597-F8FB-4741735CA90A">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:25:38 UTC</createdTime>
+<generatorID>A1FF7D5B-8BEF-023A-32DF-2F7A5B4D4333</generatorID>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<referedAttribute>806E459E-3A2E-66CE-563B-2CF80A765BFF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="2B470600-4368-58DA-F55E-08979792505F">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:31:08 UTC</createdTime>
+<generatorID>C68FE15C-C191-0F54-97F5-5AE6EFF551DA</generatorID>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<referedAttribute>4BF846C4-F844-3399-9092-F7AC9CD9ED0B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2D3A9A81-7567-221F-1837-4ADFBFB3BB39" name="Prestamo PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:56:35 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>007CB096-3969-D508-9195-3D5C81823567</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

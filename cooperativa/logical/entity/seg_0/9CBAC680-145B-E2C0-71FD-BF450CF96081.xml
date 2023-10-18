@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9CBAC680-145B-E2C0-71FD-BF450CF96081" name="Empresa">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:47:27 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="NIT" id="46D36A51-D2CC-A1F4-D36B-9176A7C28806">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:47:39 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="persona_de_contacto" id="582F6E47-5192-F332-1079-C56A503C7F07">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:49:03 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dirección" id="BB1DC7D1-69AD-121C-7BDB-1E3314D7CB96">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:52:51 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="número_de_empleados" id="3723AE05-318D-A626-E8F7-B8EB23F54565">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:53:12 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="convenio" id="2B365DB5-0FB3-FB50-3D3A-3B1D0F61016E">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:53:57 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cédula" id="BA768C12-0945-9576-22FA-37C8B58ACEFE">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:32:39 UTC</createdTime>
+<generatorID>A1F6D31D-ED6D-1E69-E78C-D4CCE10B88E5</generatorID>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<referedAttribute>806E459E-3A2E-66CE-563B-2CF80A765BFF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="283D5400-1E34-6B11-A8B6-F7608B833745" name="Empresa PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:48:35 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>46D36A51-D2CC-A1F4-D36B-9176A7C28806</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

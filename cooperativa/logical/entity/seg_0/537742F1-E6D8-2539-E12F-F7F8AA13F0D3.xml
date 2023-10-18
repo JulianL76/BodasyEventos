@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="537742F1-E6D8-2539-E12F-F7F8AA13F0D3" name="codeudor">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:42:54 UTC</createdTime>
+<notes><![CDATA[Un codeudor no puede ser socio]]></notes>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>C213F1ED-4738-D89C-51CB-C0F74621795A</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="posible_cliente" id="7F87C654-6CAA-CED2-662F-9BD32C7DB3D5">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 16:44:17 UTC</createdTime>
+<comment><![CDATA[Un codeudor no puede ser socio]]></comment>
+<commentInRDBMS><![CDATA[Un codeudor no puede ser socio]]></commentInRDBMS>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

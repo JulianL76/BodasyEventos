@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="puede tener" directorySegmentName="seg_0" id="9F630D49-69FE-487F-82B5-4D02187005A2">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:20:48 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<sourcePk>E4A75804-2607-7F0E-E888-7512F2D03B8F</sourcePk>
+<targetPk>2D3A9A81-7567-221F-1837-4ADFBFB3BB39</targetPk>
+<identifying>false</identifying>
+<nameOnSource>puede tener</nameOnSource>
+<nameOnTarget>esta vinculado</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D59E21B2-836E-0409-1CE0-962EF2090E4E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5318C55C-C703-4131-BE09-6E668707D74B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="debe estar trabajando" directorySegmentName="seg_0" id="A1F6D31D-ED6D-1E69-E78C-D4CCE10B88E5">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-18 17:32:39 UTC</createdTime>
+<ownerDesignName>cooperativa</ownerDesignName>
+<engineerTo>
+<item key="4259F214-A4F5-AFA4-DD24-849C55046823" value="true"/>
+</engineerTo>
+<sourcePk>E4A75804-2607-7F0E-E888-7512F2D03B8F</sourcePk>
+<targetPk>283D5400-1E34-6B11-A8B6-F7608B833745</targetPk>
+<identifying>false</identifying>
+<nameOnSource>debe trabajar</nameOnSource>
+<nameOnTarget> esta trabajando</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D59E21B2-836E-0409-1CE0-962EF2090E4E</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>9CBAC680-145B-E2C0-71FD-BF450CF96081</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
