@@ -121,6 +121,58 @@ html {
     display: flex;
     align-items: center;
 }
+/* Categorias */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en computadoras */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.categoria {
+    text-align: center;
+    background-color: #050505;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.categoria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.categoria-contenido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    color: #ffffff;
+    padding: 16px;
+    font-weight: bold;
+}
+
+.nombre {
+    margin: 0; 
+}
+
+.categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 20px rgba(255, 253, 253, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    .categorias {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
 
 
 
@@ -183,11 +235,7 @@ html {
         background-size: contain; /* Cambia el tamaño de fondo a 'contain' en lugar de 'cover' */
         background-position: center; /* Centra la imagen de fondo */
     }
-
-
 }
-
-
 
 @media screen and (max-width:432px){
     .contenedor-header header .logo a {
