@@ -10,8 +10,7 @@
     <title>Bodas y Eventos Prueba Final</title>
     <link rel="icon" href="img/pc.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/pc.ico" type="image/x-icon">
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
 
     <link rel="stylesheet" href="styles/style.css">
@@ -22,27 +21,38 @@
     <div class="contenedor-header">
         <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
         <header>
-            <nav id="nav" >
-                <ul class="menu" id="menu">
-                    <li><a href="#sobremi" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="">CATÁLOGO</a></li>
-                    <li><a href="">SOBRE NOSOTROS</a></li>
+            <ul>
+                <li class="contenedor-item1">
+                    <div class="logo">
+                        <a href="#">Bodas Y Eventos</a>
+                        <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="contenedor-item2">
+                <nav id="nav">
+                    <ul class="menu" id="menu">
+                        <li><a href="#sobremi" onclick="seleccionar()">INICIO</a></li>
+                        <li><a href="">CATÁLOGO</a></li>
+                        <li><a href="">SOBRE NOSOTROS</a></li>
+                    </ul>
+                </nav>
+                <ul>
+                    <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
                 </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            
-            <ul class="iconos">
+
+            </ul>
+
+
+            <ul class="iconos contenedor-item3">
                 <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                 <li><a href="#sobremi"><i class="fa-regular fa-user"></i></a></li>
                 <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
 
-            <div class="logo">
-                <a href="#">Bodas Y Eventos</a>
-                <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
-            </div>
 
 
         </header>
@@ -53,7 +63,7 @@
         </div>
     </section>
 
-        <!-- CATEGORIAS -->
+    <!-- CATEGORIAS -->
 
     <div class="categorias">
         <div class="categoria">
