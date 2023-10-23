@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="80A7707A-164B-7E7D-6E11-4B9DF3301C75" name="Traje">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:48:55 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idTraje" id="2954D0D0-30F9-A2C0-848B-8D6F5DA1F232">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:50:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="25DFAB0E-44A8-4659-D228-835AC1608E7D">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:50:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="talla" id="F4517E41-4437-0EEE-EDC8-75B768BAE21C">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:50:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="1F866E29-DCFC-64B0-40C2-9B9935FAF835">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:50:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precioAlquiler" id="097BEE99-9CA0-0FD2-DB21-4761DD40E0E7">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:52:13 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valorDeposito" id="B43A405F-B071-F141-2060-205D7CE76DD8">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:52:13 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantDisponible" id="2B34D074-58B0-A432-FE26-01100C77A522">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:52:13 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idCategoria" id="B5608376-50DA-9A5C-23C3-C7A3749C7BD0">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 03:01:49 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="481EB659-52A8-15DE-0F55-D8A8BA6B5DAB" referredColumn="E05F7458-CB8C-6213-0F5C-29F73EBACC54"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="209EAE16-C304-6D0A-7B2C-C9CBFFA2BAAC" name="Traje_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:50:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2954D0D0-30F9-A2C0-848B-8D6F5DA1F232"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B486430E-EE5A-40A8-34D0-732BF583D8CB" name="Traje_Categoria_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 03:02:09 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B5608376-50DA-9A5C-23C3-C7A3749C7BD0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
