@@ -17,3 +17,24 @@ function seleccionar(){
     document.getElementById("nav").classList = "";
     menuVisible = false;
 }
+
+const categorias = document.querySelectorAll('.categoria');
+
+//Seleccionar Categorias
+categorias.forEach((categoria) => {
+    categoria.addEventListener('click', () => {
+        categorias.forEach((c) => {
+            c.style.opacity = 0.6; 
+            c.querySelector('.categoria-contenido').style.color = '#ffffff'; 
+        });
+
+        categoria.style.opacity = 1; // Elimina la transparencia para la categoría seleccionada
+        categoria.querySelector('.categoria-contenido').style.color = '#ffffff'; // Cambia el color del texto a blanco para la categoría seleccionada
+    });
+});
+
+
+
+
+
+
