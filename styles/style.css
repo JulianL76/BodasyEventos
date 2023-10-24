@@ -159,6 +159,7 @@ html {
 
 .nombre {
     margin: 0; 
+    font-size: 30px;
 }
 
 .categoria:hover {
@@ -172,8 +173,220 @@ html {
     }
 }
 
+/* Productos */
+.container-damas {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 columnas en PC */
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-quinceanos{
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 columnas en PC */
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-caballeros{
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 columnas en PC */
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-infantil{
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 4 columnas en PC */
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
 
 
+.producto-categoria {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.producto-categoria:hover {
+    transform: scale(1.00); /* Escala al 105% en hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Sombra en hover */
+}
+
+.producto-categoria img {
+    max-width: 100%;
+    border-radius: 15px;
+    transition: transform 0.2s;    
+}
+
+.producto-categoria img:hover {
+    transform: scale(1.02); /* Escala al 110% en hover */
+}
+
+.producto-categoria h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #fff; /* Color de texto blanco */
+}
+
+.producto-categoria p {
+    margin: 10px 0;
+    color: #fff; /* Color de texto blanco */
+}
+
+.producto-categoria button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.producto-categoria button:hover {
+    background-color: #fff; 
+    color: #000; 
+    font-weight: 620;
+    transition: background-color 0.9s;
+}
+
+@media (max-width: 1100px) {
+    .container-damas {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+
+    .container-quinceanos {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+
+    .container-caballeros {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+
+    .container-infantil {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container-damas {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .container-quinceanos {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .container-caballeros {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .container-infantil {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+/* Estilos generales del footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* Estilos para la rejilla (Grid) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    gap: 10px; 
+    padding: 20px;
+    align-items: center; 
+    text-align: center;
+}
+
+/* Estilos para la sección izquierda */
+.footer-left {
+    text-align: left;
+}
+
+.footer-left h2,h5{
+    text-align: center;
+}
+
+
+/* Estilos para los enlaces en la sección central */
+.footer-center a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Estilos para la sección derecha */
+.footer-right {
+    text-align: right;
+}
+
+.footer-right a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Estilos para los botones circulares (redes sociales) en la sección derecha */
+
+.footer-right .redes{
+    text-align: center;
+}
+
+.footer-right .redes a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 5px;
+    font-size: 20px;
+    transition: .3s;
+    text-align: center;
+}
+
+.footer-right .redes a:hover {
+    background-color: #fafeff;
+    color: #000;
+}
+
+/* Estilos para el texto "Derechos reservados" */
+.copyright {
+    margin-top: 20px;
+}
 
 
 /* SECCION RESPONSIVE */
@@ -225,23 +438,72 @@ html {
     }
 
     .contenedor-header header .logo a {
-        font-size: 24px; /* Tamaño reducido para dispositivos móviles */
+        font-size: 24px; 
     }
     .contenedor-header header .logo h6 {
-        font-size: 12px; /* Tamaño reducido para dispositivos móviles */
+        font-size: 12px; 
     }
 
     .inicio {
-        background-size: contain; /* Cambia el tamaño de fondo a 'contain' en lugar de 'cover' */
-        background-position: center; /* Centra la imagen de fondo */
+        background-size: contain;
+        background-position: center; 
     }
 }
 
 @media screen and (max-width:432px){
     .contenedor-header header .logo a {
-        font-size: 17px; /* Tamaño reducido para dispositivos móviles */
+        font-size: 17px; 
     }
     .contenedor-header header .logo h6 {
-        font-size: 10px; /* Tamaño reducido para dispositivos móviles */
+        font-size: 10px;
+    }
+    .nombre{
+        font-size: 15px;
+    }
+
+    .categoria-contenido{
+        padding: 5px;
+    }
+
+    .producto-categoria h3{
+        font-size: 18px;
+    }
+    .producto-categoria p{
+        font-size: 13px;
+    }
+
+    .producto-categoria button {
+        padding: 2px 3px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center; 
+    }
+
+    .footer-left h2, h5 {
+        font-size: 13px;
+    }
+
+    .footer-center a {
+        font-size: 10px
+    }
+
+    .footer-right a {
+     font-size: 10px;
+    }
+
+    .footer-right .redes a {
+        font-size: 15px;
+    }
+    .copyright{
+        font-size: 10px;
     }
 }
