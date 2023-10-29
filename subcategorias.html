@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/styleCategorias.css">
+    <title>Gestión de Categorías</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Categorías</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Categorias</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="img/caballero.png" alt="Categoría 1" width="100" class="category-images">
+                    </td>
+                    <td>Categoría 1</td>
+                    <td>
+                        <button class="edit"><i class="fas fa-edit"></i></button>
+                        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                        <button class="view"><i class="fas fa-search"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/15 anos.png" alt="Categoría 2" width="100" class="category-images">
+                    </td>
+                    <td>Categoría 2</td>
+                    <td>
+                        <button class="edit"><i class="fas fa-edit"></i></button>
+                        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                        <button class="view"><i class="fas fa-search"></i></button>
+                    </td>
+                </tr>
+                <!-- Agregar más filas según sea necesario -->
+            </tbody>
+        </table>
+        <button class="add-category">Agregar Nueva Categoría</button>
+    </div>
+</body>
+</html>
