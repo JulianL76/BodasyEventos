@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -396,6 +399,55 @@ h5 {
     text-align: center;
 }
 
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.title-text {
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'David Libre', serif;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000000;
+    margin-left: 10px;
+}
+
+.cont-slider-novias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.cont-slider-novias p {
+font-family: "Crimson Pro";
+font-size: 18px;
+}
+
+.cont-slider-novias .columnas {
+    padding: 35px;
+    margin: 10px;
+    text-align: center;
+}
+
+.linea {
+    border-top: 1px solid #000;
+    display: inline-block;
+    width: 55%;
+    margin: 20px;
+}
+
+
+
 
 /* Estilos para los enlaces en la sección central */
 .footer-center a {
@@ -564,13 +616,15 @@ h5 {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        grid-template-columns: 1fr;
+        /* Cambiar a una sola columna */
     }
 
     .footer-left,
     .footer-center,
     .footer-right {
-        text-align: center; /* Centrar el contenido en pantallas pequeñas */
+        text-align: center;
+        /* Centrar el contenido en pantallas pequeñas */
     }
 
     .footer-right .redes a {
@@ -580,18 +634,18 @@ h5 {
         font-size: 18px;
     }
 
-    .copyright{
+    .copyright {
         font-size: 12px;
     }
 }
 
 
 /*-----------------------------------*\
-  #BANNER
+|  #BANNER                            |
 \*-----------------------------------*/
 
 .banner {
-    margin: 30px 0;
+    margin: 30px 0px 5px 0px;
 }
 
 .slider-container {
