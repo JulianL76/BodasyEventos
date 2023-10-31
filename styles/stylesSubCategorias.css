@@ -1,0 +1,259 @@
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Filtro/Buscador */
+#searchInput {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; 
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+table th {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.category-images {
+    width: 150px;
+    height: auto; 
+    border: 2px solid #080505;
+    border-radius: 5px;
+}
+
+.edit, .delete, .view {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button.edit {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: #fff;
+}
+
+button.view {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+
+button.add-category {
+    display: block;
+    margin: 20px auto;
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+button.add-category:hover {
+    background-color: #555;
+}
+
+button.return {
+   margin: 20px auto;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+
+}
+
+button.return:hover {
+    background-color: #555;
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .edit, .delete, .view {
+        font-size: 10px; 
+        padding: 5px 8px; 
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .edit, .delete, .view {
+        font-size: 9px; 
+        padding: 5px 8px; 
+    }
+}
+
+
+@media screen and (max-width: 765px) {
+    .container {
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    .category-images {
+        width: 100px;
+    }
+
+
+    .styled-table td {
+        white-space: normal;
+        word-wrap: break-word;
+        font-size: 13px;
+    }
+
+    .add-category {
+        font-size: 11px;
+        padding: 8px 16px;
+    }
+
+    .edit, .delete, .view {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    button.return {
+    font-size: 10px;
+    padding: 7px 10px; 
+
+    }
+}
+
+/* TALLAS */
+.talla-info {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.talla-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.talla-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.talla-info table th, .talla-info table td {
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.talla-info table th {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.talla-info table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.talla-info .add-talla, .talla-info .close-talla-info {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.talla-info .add-talla:hover, .talla-info .close-talla-info:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos adicionales para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .talla-info {
+        width: 90%;
+        max-height: 95%;
+    }
+
+    .talla-info h2 {
+        font-size: 18px;
+    }
+
+    .talla-info table th, .talla-info table td {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .talla-info .add-talla, .talla-info .close-talla-info {
+        padding: 8px 16px;
+        font-size: 10px;
+    }
+  
+}
