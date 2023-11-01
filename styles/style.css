@@ -446,8 +446,26 @@ font-size: 18px;
     margin: 20px;
 }
 
+.slidernovia {
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: grab;
+    background-color: #000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    border: 5px #000 solid;
+}
+.slidernovia img {
+    display: inline-block;
+    height: 250px;
+    width: auto;
+}
 
-
+.slidernovia h1{
+    color: aqua;
+}
 
 /* Estilos para los enlaces en la sección central */
 .footer-center a {

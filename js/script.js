@@ -33,7 +33,32 @@ categorias.forEach((categoria) => {
     });
 });
 
+var slidernovia = document.getElementById('slidernovia');
+var isDown = false;
+var startX;
+var scrollLeft;
 
+slidernovia.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slidernovia.style.cursor = 'grabbing';
+    startX = e.pageX - slidernovia.offsetLeft;
+    scrollLeft = slidernovia.scrollLeft;
+});
+slidernovia.addEventListener('mouseleave', () => {
+    isDown = false;
+    slidernovia.style.cursor = 'grab';
+});
+slidernovia.addEventListener('mouseup', () => {
+    isDown = false;
+    slidernovia.style.cursor = 'grab';
+});
+slidernovia.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slidernovia.offsetLeft;
+    const walk = (x - startX) * 1.5; //scroll-fast
+    slidernovia.scrollLeft = scrollLeft - walk;
+});
 
 
 
