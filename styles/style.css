@@ -69,7 +69,9 @@ header {
 
 .contenedor-header header .logo a {
 
-    font-family: 'Righteous';
+    font-family: 'David Libre';
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 36px;
     color: #000;
     text-decoration: none;
@@ -162,6 +164,7 @@ header {
     justify-content: center;
 }
 
+
 .btn-agendar {
     font-family: "montserrat";
     font-size: 15px;
@@ -209,13 +212,15 @@ header {
     right: 0;
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
-    padding: 16px;
+    padding: 12px;
     font-weight: bold;
 }
 
 .nombre {
     margin: 0;
-    font-size: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat';
 }
 
 .categoria:hover {
@@ -394,9 +399,17 @@ footer {
     text-align: left;
 }
 
-.footer-left h2,
-h5 {
+.footer-left h5 {
     text-align: center;
+    font-family: 'David Libre';
+    font-weight: 500;
+}
+
+.footer-left h2 {
+    text-align: center;
+    font-family: 'David Libre';
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .title-section {
@@ -410,6 +423,7 @@ h5 {
 
 .title-text {
     margin-right: 10px;
+    margin-left: 50px;
     font-size: 24px;
     font-weight: 500;
     font-family: 'David Libre', serif;
@@ -467,13 +481,25 @@ font-size: 18px;
     color: aqua;
 }
 
+.slidernovia p{
+    color:aquamarine
+}
+
 /* Estilos para los enlaces en la sección central */
 .footer-center a {
-    color: #fff;
+    color: #d8d8d8;
     text-decoration: none;
-    font-weight: bold;
     display: block;
+    font-family: 'David Libre';
     margin: 5px 0;
+    line-height: 20px;
+}
+
+.footer-center a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+
+
 }
 
 /* Estilos para la sección derecha */
@@ -484,9 +510,11 @@ font-size: 18px;
 .footer-right a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     display: block;
+    font-weight: 700;
+    font-size: 18px;
     text-align: center;
+    font-family: 'David Libre';
     margin: 5px 0;
 }
 
@@ -518,7 +546,7 @@ font-size: 18px;
 
 /* Estilos para el texto "Derechos reservados" */
 .copyright {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 
@@ -649,14 +677,80 @@ font-size: 18px;
         width: 36px;
         height: 36px;
         line-height: 36px;
-        font-size: 18px;
+        font-size: 12px;
     }
 
     .copyright {
         font-size: 12px;
     }
+
+    .cont-slider-novias {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
 }
 
+.map-title{
+    text-align: center;
+    color: #FFF;
+    margin: 5px 0 25px 0;
+    font-weight: 600;
+}
+
+.map{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.map-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 20px 20px;
+    padding: 15px 25px 25px 25px;
+    background-color: #000;
+    border-radius: 25px;
+    flex-direction: column;
+}
+
+.map-info{
+    margin-left: 25px;
+
+}
+
+.map img{
+    width: 350px;
+    justify-content: right;
+    
+}
+
+.map p{
+    color: #fff;
+    line-height: 30px;
+}
+
+.map-btn {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 15px;
+    transition: 300ms;
+    text-decoration: none;
+    border: solid white 2px;
+}
+
+.map-btn:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
 
 /*-----------------------------------*\
 |  #BANNER                            |
