@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -66,7 +69,9 @@ header {
 
 .contenedor-header header .logo a {
 
-    font-family: 'Righteous';
+    font-family: 'David Libre';
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 36px;
     color: #000;
     text-decoration: none;
@@ -159,6 +164,7 @@ header {
     justify-content: center;
 }
 
+
 .btn-agendar {
     font-family: "montserrat";
     font-size: 15px;
@@ -206,13 +212,15 @@ header {
     right: 0;
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
-    padding: 16px;
+    padding: 12px;
     font-weight: bold;
 }
 
 .nombre {
     margin: 0;
-    font-size: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat';
 }
 
 .categoria:hover {
@@ -391,19 +399,107 @@ footer {
     text-align: left;
 }
 
-.footer-left h2,
-h5 {
+.footer-left h5 {
+    text-align: center;
+    font-family: 'David Libre';
+    font-weight: 500;
+}
+
+.footer-left h2 {
+    text-align: center;
+    font-family: 'David Libre';
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.title-text {
+    margin-right: 10px;
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'David Libre', serif;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000000;
+    margin-left: 10px;
+}
+
+.cont-slider-novias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.cont-slider-novias p {
+font-family: "Crimson Pro";
+font-size: 18px;
+}
+
+.cont-slider-novias .columnas {
+    padding: 35px;
+    margin: 10px;
     text-align: center;
 }
 
+.linea {
+    border-top: 1px solid #000;
+    display: inline-block;
+    width: 55%;
+    margin: 20px;
+}
+
+.slidernovia {
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: grab;
+    background-color: #000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    border: 5px #000 solid;
+}
+.slidernovia img {
+    display: inline-block;
+    height: 250px;
+    width: auto;
+}
+
+.slidernovia h1{
+    color: aqua;
+}
+
+.slidernovia p{
+    color:aquamarine
+}
 
 /* Estilos para los enlaces en la sección central */
 .footer-center a {
-    color: #fff;
+    color: #d8d8d8;
     text-decoration: none;
-    font-weight: bold;
     display: block;
+    font-family: 'David Libre';
     margin: 5px 0;
+    line-height: 20px;
+}
+
+.footer-center a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+
+
 }
 
 /* Estilos para la sección derecha */
@@ -414,9 +510,11 @@ h5 {
 .footer-right a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
     display: block;
+    font-weight: 700;
+    font-size: 18px;
     text-align: center;
+    font-family: 'David Libre';
     margin: 5px 0;
 }
 
@@ -448,7 +546,7 @@ h5 {
 
 /* Estilos para el texto "Derechos reservados" */
 .copyright {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 
@@ -564,34 +662,102 @@ h5 {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        grid-template-columns: 1fr;
+        /* Cambiar a una sola columna */
     }
 
     .footer-left,
     .footer-center,
     .footer-right {
-        text-align: center; /* Centrar el contenido en pantallas pequeñas */
+        text-align: center;
+        /* Centrar el contenido en pantallas pequeñas */
     }
 
     .footer-right .redes a {
         width: 36px;
         height: 36px;
         line-height: 36px;
-        font-size: 18px;
+        font-size: 12px;
     }
 
-    .copyright{
+    .copyright {
         font-size: 12px;
+    }
+
+    .cont-slider-novias {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
     }
 }
 
+.map-title{
+    text-align: center;
+    color: #FFF;
+    margin: 5px 0 25px 0;
+    font-weight: 600;
+}
+
+.map{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.map-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 20px 20px;
+    padding: 15px 25px 25px 25px;
+    background-color: #000;
+    border-radius: 25px;
+    flex-direction: column;
+}
+
+.map-info{
+    margin-left: 25px;
+
+}
+
+.map img{
+    width: 350px;
+    justify-content: right;
+    
+}
+
+.map p{
+    color: #fff;
+    line-height: 30px;
+}
+
+.map-btn {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 15px;
+    transition: 300ms;
+    text-decoration: none;
+    border: solid white 2px;
+}
+
+.map-btn:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
 
 /*-----------------------------------*\
-  #BANNER
+|  #BANNER                            |
 \*-----------------------------------*/
 
 .banner {
-    margin: 30px 0;
+    margin: 30px 0px 5px 0px;
 }
 
 .slider-container {
