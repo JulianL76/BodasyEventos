@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap");
 
 * {
     box-sizing: border-box;
-    font-family: 'Work Sans';
+    font-family: "Work Sans";
     margin: 0;
     padding: 0;
 }
@@ -34,7 +33,6 @@ header {
 
 .contenedor-header h6 {
     text-align: center;
-
 }
 
 .contenedor-item1 {
@@ -68,8 +66,7 @@ header {
 }
 
 .contenedor-header header .logo a {
-
-    font-family: 'David Libre';
+    font-family: "David Libre";
     text-transform: uppercase;
     font-weight: 700;
     font-size: 36px;
@@ -87,7 +84,7 @@ header {
     color: #000;
     margin: 0 15px;
     padding: 3px;
-    transition: .5s;
+    transition: 0.5s;
     text-decoration: none;
 }
 
@@ -96,9 +93,8 @@ header {
     color: #000;
     margin: 0 15px;
     padding: 0px;
-    transition: .5s;
+    transition: 0.5s;
     text-decoration: none;
-
 }
 
 .contenedor-header header nav ul li a:hover {
@@ -137,11 +133,14 @@ header {
     display: none;
 }
 
-
 /* INICIO */
 
 .inicio {
-    background: linear-gradient(to top, rgba(30, 35, 38, .8), rgba(30, 35, 38, 1)),
+    background: linear-gradient(
+            to top,
+            rgba(30, 35, 38, 0.8),
+            rgba(30, 35, 38, 1)
+        ),
         url(../img/Matrimonio.jpg);
     background-size: cover;
     height: 100vh;
@@ -149,7 +148,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .inicio h1 {
@@ -163,7 +161,6 @@ header {
 .contenido-banner {
     justify-content: center;
 }
-
 
 .btn-agendar {
     font-family: "montserrat";
@@ -220,7 +217,7 @@ header {
     margin: 0;
     font-size: 18px;
     font-weight: 400;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
 }
 
 .categoria:hover {
@@ -286,14 +283,13 @@ header {
     text-align: center;
 }
 
-
 .producto-categoria {
     padding: 20px;
     border-radius: 10px;
 }
 
 .producto-categoria:hover {
-    transform: scale(1.00);
+    transform: scale(1);
     /* Escala al 105% en hover */
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     /* Sombra en hover */
@@ -357,7 +353,6 @@ header {
     }
 }
 
-
 @media (max-width: 768px) {
     .container-damas {
         grid-template-columns: repeat(2, 1fr);
@@ -375,7 +370,6 @@ header {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 /* Estilos generales del footer */
 footer {
@@ -401,13 +395,13 @@ footer {
 
 .footer-left h5 {
     text-align: center;
-    font-family: 'David Libre';
+    font-family: "David Libre";
     font-weight: 500;
 }
 
 .footer-left h2 {
     text-align: center;
-    font-family: 'David Libre';
+    font-family: "David Libre";
     font-size: 25px;
     font-weight: 700;
 }
@@ -426,7 +420,7 @@ footer {
     margin-left: 50px;
     font-size: 24px;
     font-weight: 500;
-    font-family: 'David Libre', serif;
+    font-family: "David Libre", serif;
 }
 
 .divider {
@@ -443,14 +437,16 @@ footer {
 }
 
 .cont-slider-novias p {
-font-family: "Crimson Pro";
-font-size: 18px;
+    font-family: "Crimson Pro";
+    font-size: 18px;
 }
 
 .cont-slider-novias .columnas {
+    align-items: center;
     padding: 35px;
     margin: 10px;
     text-align: center;
+    max-width: 500px;
 }
 
 .linea {
@@ -477,12 +473,12 @@ font-size: 18px;
     width: auto;
 }
 
-.slidernovia h1{
+.slidernovia h1 {
     color: aqua;
 }
 
-.slidernovia p{
-    color:aquamarine
+.slidernovia p {
+    color: aquamarine;
 }
 
 /* Estilos para los enlaces en la sección central */
@@ -490,7 +486,7 @@ font-size: 18px;
     color: #d8d8d8;
     text-decoration: none;
     display: block;
-    font-family: 'David Libre';
+    font-family: "David Libre";
     margin: 5px 0;
     line-height: 20px;
 }
@@ -498,8 +494,6 @@ font-size: 18px;
 .footer-center a:hover {
     color: #ffffff;
     text-decoration: underline;
-
-
 }
 
 /* Estilos para la sección derecha */
@@ -514,7 +508,7 @@ font-size: 18px;
     font-weight: 700;
     font-size: 18px;
     text-align: center;
-    font-family: 'David Libre';
+    font-family: "David Libre";
     margin: 5px 0;
 }
 
@@ -535,7 +529,7 @@ font-size: 18px;
     line-height: 42px;
     margin: 5px;
     font-size: 20px;
-    transition: .3s;
+    transition: 0.3s;
     text-align: center;
 }
 
@@ -549,12 +543,72 @@ font-size: 18px;
     margin-top: 5px;
 }
 
+.map-title {
+    text-align: center;
+    color: #fff;
+    margin: 5px 0 25px 0;
+    font-weight: 600;
+}
+
+.map {
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.map-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 20px 20px;
+    padding: 15px 25px 25px 25px;
+    background-color: #000;
+    border-radius: 25px;
+    flex-direction: column;
+    max-width: 1100px;
+}
+
+.map-info {
+    font-size: 15px;
+}
+
+.map img {
+    width: 90%;
+    justify-content: right;
+}
+
+.map p {
+    color: #fff;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.map-btn {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 15px;
+    transition: 300ms;
+    text-decoration: none;
+    border: solid white 2px;
+}
+
+.map-btn:hover {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
 
 /* SECCION RESPONSIVE */
-@media screen and (max-width:920px) {
+@media screen and (max-width: 920px) {
     .contenedor-header header {
         align-items: left;
-
     }
 
     .contenedor-header header .logo {
@@ -589,7 +643,7 @@ font-size: 18px;
         position: absolute;
         left: 0;
         top: 75px;
-        background-color: #252A2E;
+        background-color: #252a2e;
         width: 180px;
     }
 
@@ -603,7 +657,7 @@ font-size: 18px;
     }
 
     .contenedor-header header nav ul li a {
-        color: #ffffff
+        color: #ffffff;
     }
 
     .contenedor-header header .logo a {
@@ -624,13 +678,12 @@ font-size: 18px;
     }
 }
 
-@media screen and (max-width:432px) {
+@media screen and (max-width: 432px) {
     .inicio h1 {
         font-size: 40px;
         margin: 20px auto 75px auto;
         -webkit-text-stroke: #000 2px;
         text-wrap: wrap;
-
     }
 
     .contenedor-header header .logo a {
@@ -648,9 +701,8 @@ font-size: 18px;
         color: #000;
         margin: 0 2px;
         padding: 5px 5px 5px 5px;
-        transition: .5s;
+        transition: 0.5s;
         text-decoration: none;
-
     }
 
     .nombre {
@@ -658,7 +710,7 @@ font-size: 18px;
     }
 
     .producto-categoria h3 {
-        font-size: 18px
+        font-size: 18px;
     }
 
     .footer-grid {
@@ -689,67 +741,18 @@ font-size: 18px;
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
     }
-}
 
-.map-title{
-    text-align: center;
-    color: #FFF;
-    margin: 5px 0 25px 0;
-    font-weight: 600;
-}
+    .map {
+        flex-direction: column-reverse;
+    }
 
-.map{
-    display: flex;
-    justify-content: space-between;
-    border-radius: 25px;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-}
+    .map p {
+        font-size: 12px;
+    }
 
-.map-container{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 20px 20px 20px;
-    padding: 15px 25px 25px 25px;
-    background-color: #000;
-    border-radius: 25px;
-    flex-direction: column;
-}
-
-.map-info{
-    margin-left: 25px;
-
-}
-
-.map img{
-    width: 350px;
-    justify-content: right;
-    
-}
-
-.map p{
-    color: #fff;
-    line-height: 30px;
-}
-
-.map-btn {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    width: max-content;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 6px 20px;
-    border-radius: 15px;
-    transition: 300ms;
-    text-decoration: none;
-    border: solid white 2px;
-}
-
-.map-btn:hover {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    .map-title {
+        font-size: 20px;
+    }
 }
 
 /*-----------------------------------*\
@@ -871,7 +874,6 @@ font-size: 18px;
 }
 
 @media (min-width: 570px) {
-
     .slider-item {
         aspect-ratio: 4 / 2;
     }
@@ -882,7 +884,6 @@ font-size: 18px;
 }
 
 @media (min-width: 768px) {
-
     .slider-item {
         aspect-ratio: auto;
         height: 350px;

@@ -105,7 +105,7 @@ slidernovia.addEventListener('touchmove', (e) => {
         if (e.cancelable) {
             e.preventDefault();
         }
-        const walk = (x - startX) * 2; //scroll-slower
+        const walk = (x - startX) * 1.2; //scroll-slower
         slidernovia.scrollLeft = scrollLeft - walk;
     }
 });
