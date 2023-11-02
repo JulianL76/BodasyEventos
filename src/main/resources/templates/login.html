@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de secion</title>
+    <link rel="stylesheet" href="/src/main/resources/static/styles/stylesLogin.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form action="dashboard.html" method="post">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <div class="select-container">
+                <select name="tipo-usuario" id="tipo-usuario" required>
+                    <option value="" disabled selected hidden>Selecciona el tipo de usuario</option>
+                    <option value="admin">Administrador</option>
+                    <option value="auxiliar">Auxiliar</option>
+                </select>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -417,7 +417,7 @@ footer {
 
 .title-text {
     margin-right: 10px;
-    margin-left: 50px;
+    margin-left: 5%;
     font-size: 24px;
     font-weight: 500;
     font-family: "David Libre", serif;
@@ -434,6 +434,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    align-items: center;
 }
 
 .cont-slider-novias p {
@@ -706,7 +707,7 @@ footer {
     }
 
     .nombre {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .producto-categoria h3 {
