@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Categorías</title>
+</head>
+<body>
+    <form action="/tu_ruta_de_procesamiento" method="post">
+        <label for="categoria">Selecciona una categoría:</label>
+        <select name="categoria" id="categoria">
+            <option value="">Selecciona una categoría</option>
+            <th:block th:each="categoria : ${categorias}">
+                <option th:value="${categoria.id}" th:text="${categoria.nombre}"></option>
+            </th:block>
+        </select>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
