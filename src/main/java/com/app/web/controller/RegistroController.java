@@ -1,19 +1,20 @@
 package com.app.web.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.app.web.services.UsuarioService;
-
 @Controller
 public class RegistroController {
-
-    @Autowired
-    private UsuarioService servicio;
     
+    @GetMapping("/")
+    public String paginaPrincipal() {
+        return "index";
+    } 
     @GetMapping("/login")
     public String iniciarSesion() {
         return "login";
+    } 
+    @GetMapping("/inicio")
+    public String panelDeInicio() {
+        return "paneldeinicio";
     } 
    
 }

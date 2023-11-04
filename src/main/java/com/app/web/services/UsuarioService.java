@@ -8,7 +8,7 @@ import com.app.web.entities.Usuario;
 public interface UsuarioService extends UserDetailsService{
 
 	public Usuario guardar(Usuario usuario);
-	
 	public List<Usuario> listarUsuarios();
+	public boolean existeUsuarioConEmail(String email);
 	
 }
