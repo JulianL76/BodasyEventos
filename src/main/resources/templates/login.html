@@ -1,26 +1,26 @@
-
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de secion</title>
-    <link rel="stylesheet" href="/src/main/resources/static/styles/stylesLogin.css">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="/styles/stylesLogin.css" >
 </head>
-
 <body>
     <div class="login-container">
         <h1>Iniciar Sesión</h1>
-        <form action="dashboard.html" method="post">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" name="contrasena" placeholder="Contraseña" required>
-            <div class="select-container">
-                <select name="tipo-usuario" id="tipo-usuario" required>
-                    <option value="" disabled selected hidden>Selecciona el tipo de usuario</option>
-                    <option value="admin">Administrador</option>
-                    <option value="auxiliar">Auxiliar</option>
-                </select>
-            </div>
-            <button type="submit">Iniciar Sesión</button>
+        <form th:action="@{/login}" method="post">
+            <div th:if=${param.error}>
+						<div class="alert alert-danger">Usuario o contraseña
+							inválidos</div>
+					</div>
+					<div th:if=${param.logout}>
+						<div class="alert alert-info">Ha cerrado sesión exitosamente
+						</div>
+					</div>
+            <input id="username" type="email" name="username" placeholder="Usuario" required>
+            <input id="password" type="password" name="password" placeholder="Contraseña" required>
+         <button type="submit">Iniciar Sesión</button>
         </form>
     </div>
 </body>

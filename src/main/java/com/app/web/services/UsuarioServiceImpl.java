@@ -2,6 +2,7 @@ package com.app.web.services;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -42,5 +43,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public List<Usuario> listarUsuarios() {
 		return usuarioRepository.findAll();
+	}
+	@Override
+	public boolean existeUsuarioConEmail(String email) {
+		Usuario usuarioExistente = usuarioRepository.findByEmail(email);
+	    return usuarioExistente != null;
 	}
 }
