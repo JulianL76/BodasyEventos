@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap");
 
+
 * {
     box-sizing: border-box;
     font-family: "Work Sans";
@@ -87,8 +88,9 @@ header {
     color: #000;
     margin: 0 15px;
     padding: 3px;
-    transition: 0.5s;
+    transition: 0.3s;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .contenedor-header .iconos a {
@@ -101,8 +103,7 @@ header {
 }
 
 .contenedor-header header nav ul li a:hover {
-    color: #ffffff;
-    background-color: #000000;
+    background-color: #adadad;
     border-radius: 15px;
     background-size: 50px;
     text-align: center;
@@ -112,18 +113,15 @@ header {
 #menu li {
     text-align: center;
     margin-right: 1px;
-    /* Agrega margen derecho para separar los elementos */
 }
 
 #menu li:last-child {
     margin-right: 0;
-    /* Elimina el margen derecho del último elemento */
 }
 
 #menu li a {
     display: block;
     padding: 10px 2px;
-    /* Ajusta el padding para controlar el espacio horizontal y vertical */
     text-decoration: none;
 }
 
