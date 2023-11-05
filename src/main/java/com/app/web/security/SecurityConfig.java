@@ -29,7 +29,7 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-
+				.requestMatchers("/").permitAll()
 				.requestMatchers("/registro**").permitAll()
 				.requestMatchers("/login**").permitAll()
 				.requestMatchers("/img/**").permitAll()
@@ -42,7 +42,7 @@ public class SecurityConfig {
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
-				.loginPage("/BodasyEventos")
+				.loginPage("/login")
 				.successHandler((request, response, authentication) -> {
 					redirectAfterLogin(authentication, response, request);
 				})
@@ -65,7 +65,7 @@ public class SecurityConfig {
 		if (usuario != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuarioId", usuario.getId());
-			response.sendRedirect("/admin");
+			response.sendRedirect("/inicio");
 			return;
 		}
 	}

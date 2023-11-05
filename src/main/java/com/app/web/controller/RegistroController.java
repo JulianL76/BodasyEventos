@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RegistroController {
 
-    @GetMapping("/BodasyEventos")
+    @GetMapping("/")
     public String paginaPrincipal() {
         return "index";
     }
@@ -14,6 +14,11 @@ public class RegistroController {
     @GetMapping("/login")
     public String iniciarSesion() {
         return "login";
+    }
+
+    @GetMapping("/inicio")
+    public String panelDeInicio() {
+        return "paneldeinicio";
     }
 
 }
