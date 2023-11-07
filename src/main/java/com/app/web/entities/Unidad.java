@@ -10,8 +10,8 @@ public class Unidad {
 	@EmbeddedId
     private UnidadPK unidadPK;
     
-	private int cantidad;
-	private int precioAlquiler;
+	private Integer cantidad;
+	private Integer precioAlquiler;
 	@ManyToMany(mappedBy = "unidades")
 	private List<Alquiler> alquileres;
 

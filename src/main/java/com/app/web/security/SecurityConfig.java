@@ -25,35 +25,33 @@ public class SecurityConfig {
 	private UsuarioRepository usuarioRepository;
 
 	@Autowired
-	@SuppressWarnings({ "deprecation", "removal" })
+	@SuppressWarnings({ "deprecation" })
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.requestMatchers("/").permitAll()
-				.requestMatchers("/registro**").permitAll()
-				.requestMatchers("/login**").permitAll()
-				.requestMatchers("/img/**").permitAll()
-				.requestMatchers("/css/**").permitAll()
-				.requestMatchers("/js/**").permitAll()
-				.requestMatchers("/styles/**").permitAll()
-				.requestMatchers("/admin/**").hasAuthority("ADMIN")
-				.requestMatchers("/cliente/**").hasAuthority("CLIENTE")
-				.requestMatchers("/entrenador/**").hasAuthority("ENTRENADOR")
-				.anyRequest().authenticated()
-				.and()
-				.formLogin()
-				.loginPage("/login")
-				.successHandler((request, response, authentication) -> {
-					redirectAfterLogin(authentication, response, request);
-				})
-				.permitAll()
-				.and()
-				.logout()
-				.invalidateHttpSession(true)
-				.clearAuthentication(true)
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login?logout")
-				.permitAll();
+        http.authorizeRequests(requests -> requests
+                .requestMatchers("/").permitAll()
+                .requestMatchers("/registro**").permitAll()
+                .requestMatchers("/login**").permitAll()
+                .requestMatchers("/img/**").permitAll()
+                .requestMatchers("/css/**").permitAll()
+                .requestMatchers("/js/**").permitAll()
+                .requestMatchers("/styles/**").permitAll()
+                .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                .requestMatchers("/cliente/**").hasAuthority("CLIENTE")
+                .requestMatchers("/entrenador/**").hasAuthority("ENTRENADOR")
+                .anyRequest().authenticated())
+                .formLogin(login -> login
+                        .loginPage("/login")
+                        .successHandler((request, response, authentication) -> {
+                            redirectAfterLogin(authentication, response, request);
+                        })
+                        .permitAll())
+                .logout(logout -> logout
+                        .invalidateHttpSession(true)
+                        .clearAuthentication(true)
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                        .logoutSuccessUrl("/login?logout")
+                        .permitAll());
 
 		return http.build();
 	}

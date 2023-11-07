@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 public class Cliente {
     @Id
-    private int cedula;
+    private Integer cedula;
     private String nombre;
     private String apellido;
     private String correo;

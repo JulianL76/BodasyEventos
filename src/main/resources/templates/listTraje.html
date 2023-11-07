@@ -1,0 +1,30 @@
+<!-- templates/trajes/listar.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Trajes</title>
+</head>
+<body>
+    <h1>Listado de Trajes</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="traje : ${trajes}">
+            <td th:text="${traje.idTraje}"></td>
+            <td th:text="${traje.nombre}"></td>
+            <td>
+                <img th:src="@{/trajes/imagen/${traje.idTraje}}" width="100" height="100" alt="Imagen"/>
+            </td>
+            <td>
+                <a th:href="@{'/inicio/registroTraje/editar/' + ${traje.idTraje}}">Editar</a>
+                <a th:href="@{'/inicio/registroTraje/borrar/' + ${traje.idTraje}}">Borrar</a>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/inicio/registroTraje/nuevo}">Nuevo Traje</a>
+</body>
+</html>

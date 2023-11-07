@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Tallas</title>
+</head>
+<body>
+    <h1>Lista de Tallas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="Talla : ${Tallas}">
+            <td th:text="${Talla.idTalla}"></td>
+            <td th:text="${Talla.nombre}"></td>
+            <td>
+                <a th:href="@{/inicio/talla/{id}/editar(id=${Talla.idTalla})}">Editar</a>
+                <a th:href="@{/inicio/talla/{id}/borrar(id=${Talla.idTalla})}">Borrar</a>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/inicio/talla/nuevo}">Nueva Talla</a>
+</body>
+</html>

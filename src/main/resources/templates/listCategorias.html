@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Categorías</title>
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="categoria : ${categorias}">
+            <td th:text="${categoria.idCategoria}"></td>
+            <td th:text="${categoria.nombre}"></td>
+            <td>
+                <a th:href="@{/inicio/categoria/{id}/editar(id=${categoria.idCategoria})}">Editar</a>
+                <a th:href="@{/inicio/categoria/{id}/borrar(id=${categoria.idCategoria})}">Borrar</a>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/inicio/categoria/nuevo}">Nueva Categoría</a>
+</body>
+</html>
