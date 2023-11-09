@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Traje</title>
+</head>
+<body>
+    <h1>Formulario de Traje</h1>
+    <form method="post" enctype="multipart/form-data" th:object="${traje}" th:action="@{/inicio/registroTraje/nuevo}">
+            <div>
+            <label for="nombre">Cantidad:</label>
+            <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" />
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre" />
+        </div>
+        <div>
+
+            <label class="control-label" for="categoria">categoria :</label> 
+            <select
+							id="categoria" class="form-control" th:field="*{categoria}">
+							<option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
+								th:text="${categoria.nombre}"></option>
+			</select>
+        </div>
+        <div>
+            <label for="file">Imagen:</label>
+            <input type="file" name="file" id="file" accept="image/*" />
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

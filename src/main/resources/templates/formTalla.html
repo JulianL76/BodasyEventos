@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario de Tallas</title>
+</head>
+<body>
+    <h1>Formulario de Tallas</h1>
+    <form method="post" th:object="${Talla}"
+          th:action="${esEdicion} ? @{/inicio/talla/editar/{id}(id=${Talla.idTalla})} : @{/inicio/talla/nuevo}">
+        <input type="text" th:field="*{nombre}" placeholder="Nombre" />
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

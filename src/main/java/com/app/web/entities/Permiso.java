@@ -10,7 +10,7 @@ import lombok.Data;
 public class Permiso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nombre;
     
     @ManyToMany(mappedBy = "permisos")

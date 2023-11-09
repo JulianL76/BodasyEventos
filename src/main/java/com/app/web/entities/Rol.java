@@ -11,7 +11,7 @@ import java.util.Set;
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nombre;
     @OneToMany(mappedBy = "rol")
     private List<Usuario> usuarios;
