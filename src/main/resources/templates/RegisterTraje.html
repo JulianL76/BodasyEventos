@@ -6,18 +6,22 @@
 <body>
     <h1>Formulario de Traje</h1>
     <form method="post" enctype="multipart/form-data" th:object="${traje}" th:action="@{/inicio/registroTraje/nuevo}">
+            <div>
+            <label for="nombre">Cantidad:</label>
+            <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" />
+        </div>
         <div>
             <label for="nombre">Nombre:</label>
             <input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre" />
         </div>
         <div>
-            <label for="categoria">Categoría:</label>
-            <select th:field="*{categoria.idCategoria}" id="categoria" name="categoria">
-                <option value="">Selecciona una categoría</option>
-                <th:each var="cat" items="${categorias}">
-                    <option th:value="${cat.idCategoria}" th:text="${cat.nombre}"></option>
-                </th:each>
-            </select>
+
+            <label class="control-label" for="categoria">categoria :</label> 
+            <select
+							id="categoria" class="form-control" th:field="*{categoria}">
+							<option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
+								th:text="${categoria.nombre}"></option>
+			</select>
         </div>
         <div>
             <label for="file">Imagen:</label>

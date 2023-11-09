@@ -36,4 +36,8 @@ public class TrajeService {
     public void borrarTraje(Integer id) {
         trajeRepository.deleteById(id);
     }
+    
+    public byte[] obtenerImagenDeTraje(Traje traje) {
+        return traje.getImagenes(); // Devuelve los datos de imagen almacenados en el traje
+    }
 }
