@@ -4,7 +4,7 @@
     <title>Formulario de Categoría</title>
 </head>
 <body>
-    <h1>Formulario de Tallas</h1>
+    <h1>Formulario de Categorias</h1>
     <form method="post" th:object="${categoria}"
           th:action="${esEdicion} ? @{/inicio/categoria/editar/{id}(id=${categoria.idCategoria})} : @{/inicio/categoria/nuevo}">
         <input type="text" th:field="*{nombre}" placeholder="Nombre" />

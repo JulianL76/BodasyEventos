@@ -110,6 +110,21 @@ slidernovia.addEventListener('touchmove', (e) => {
     }
 });
 
+// ========================================
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        const headerHeight = document.querySelector('.contenedor-header').offsetHeight;
+        const targetOffset = targetSection.offsetTop - headerHeight;
+
+        window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
+        });
+    });
+});
 
 
