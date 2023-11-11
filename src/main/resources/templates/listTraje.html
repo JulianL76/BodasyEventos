@@ -14,17 +14,19 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Cantidad</th>
-            <th>Categoria</th>
-            <th>Imagen</th>
+            <th>Categoría</th>
+            <th>Imágenes</th>
             <th>Acciones</th>
         </tr>
         <tr th:each="traje : ${trajes}">
-            <td th:text="${traje.idTraje}"></td>
+             <td th:text="${traje.idTraje}"></td>
             <td th:text="${traje.nombre}"></td>
             <td th:text="${traje.cantidadTotal}"></td>
-            <td th:text="${traje.categoria.nombre}"></td> <!-- Assuming traje has a 'categoria' property -->
+            <td th:text="${traje.categoria.nombre}"></td>
             <td>
-                <img th:if="${traje.imagenes != null}" th:src="@{'data:image/png;base64,' + ${#strings.toString(traje.imagenes)}}" width="100" height="100"/>
+                <div th:each="imagen : ${traje.imagenes}">
+                    <img th:src="@{'/inicio/registroTraje/uploads/' + ${imagen}}" width="100" height="100"/>
+                </div>
             </td>
             <td>
                 <a th:href="@{'/inicio/registroTraje/editar/' + ${traje.idTraje}}">
@@ -43,7 +45,6 @@
         <a th:href="@{/inicio/registroTraje/nuevo}">
             <button>Nuevo Traje</button>
         </a>
-        
     </div>
 </body>
 </html>

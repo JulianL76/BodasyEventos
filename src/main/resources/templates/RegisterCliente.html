@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Cliente</title>
+</head>
+<body>
+<h1>Registron de cliente</h1>
+<form th:object="${cliente}" th:action="@{/inicio/cliente/nuevo}" method="post">
+    Cédula: <input type="text" th:field="*{cedula}" th:readonly="${cliente.cedula != null}" required/><br/>
+    Nombre: <input type="text" th:field="*{nombre}" required/><br/>
+    Apellido: <input type="text" th:field="*{apellido}" required/><br/>
+    Correo: <input type="email" th:field="*{correo}" required/><br/>
+    Dirección: <input type="text" th:field="*{direccion}" required/><br/>
+    Teléfono: <input type="text" th:field="*{telefono}" required/><br/>
+    <button type="submit">Guardar</button>
+</form>
+
+</body>
+</html>

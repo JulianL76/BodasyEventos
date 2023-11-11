@@ -9,6 +9,7 @@ public class Usuario {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer id;
    private String nombre;
+   private boolean activo;
    private String email;
    private String password;
    @ManyToOne
