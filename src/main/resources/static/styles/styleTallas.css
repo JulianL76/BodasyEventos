@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=David+Libre:wght@400;500;700&display=swap");
+
+body {
+    font-family: "Work Sans";
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    margin-top: 20px;
+}
+
+table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+th, td {
+    padding: 8px; /* Reducido el padding para reducir el ancho horizontal */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button.edit {
+    background-color: #0b7709;
+    color: #fff;
+}
+
+button.delete {
+    background-color: #A60505;
+    color: #fff;
+}
+
+.centered-button {
+    text-align: center;
+}
+
+

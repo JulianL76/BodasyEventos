@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Lista de Tallas</title>
+    <link rel="stylesheet" href="/styles/styleTallas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <h1>Lista de Tallas</h1>
     <table>
@@ -15,11 +21,28 @@
             <td th:text="${Talla.idTalla}"></td>
             <td th:text="${Talla.nombre}"></td>
             <td>
-                <a th:href="@{/inicio/talla/{id}/editar(id=${Talla.idTalla})}">Editar</a>
-                <a th:href="@{/inicio/talla/{id}/borrar(id=${Talla.idTalla})}">Borrar</a>
+                <a th:href="@{/inicio/talla/{id}/editar(id=${Talla.idTalla})}">
+                    <button class="edit"><i class="fas fa-edit"></i></button>
+                </a>
+                <a th:href="@{/inicio/talla/{id}/borrar(id=${Talla.idTalla})}">
+                    <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                </a>
+
             </td>
         </tr>
     </table>
-    <a th:href="@{/inicio/talla/nuevo}">Nueva Talla</a>
+
+    <div class="centered-button">
+        <a th:href="@{/inicio}">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+        </a>
+        
+        <a th:href="@{/inicio/talla/nuevo}">
+            <button>Nueva Talla</button>
+        </a>
+       
+    </div>
+
 </body>
+
 </html>

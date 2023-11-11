@@ -25,8 +25,9 @@ body {
     padding: 0;
 }
 
-
-
+label{
+    margin-bottom: 100px;
+}
 
 /*-----------------------------------*\
 |  #HEADER                            |
@@ -151,9 +152,31 @@ header {
 |  #FIN HEADER                        |
 \*-----------------------------------*/
 
+.columnas{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Cambiado a min-height */
+  box-sizing: border-box; /* Evitar que el padding afecte al tamaño total */
+  justify-items: center;  
+  margin: 0 15%;
+}
+
+.column {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+/*-----------------------------------*\
+|  #TARJETA CONTENEDOR                |
+\*-----------------------------------*/
+
 .container {
-    max-width: 400px;
-    margin: 20px auto; 
+    max-width: 60%;
+    min-width: 400px;
+    margin: 20px; 
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -180,9 +203,10 @@ input[type="password"],
 select {
     width: 90%;
     padding: 10px;
-    margin: 5px 0;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 .form-group {
@@ -207,6 +231,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 15px;
 }
 
 button:hover {
@@ -225,12 +250,11 @@ button:hover {
 .check {
     padding: 10px;
     margin: 10px 0;
-    background-color: #0ffdc2;
+    background-color: rgb(5, 119, 34);
     color: #fff;
     border-radius: 5px;
     text-align: center;
 }
-
 
 .form-check {
     margin-bottom: 10px; 
@@ -303,133 +327,60 @@ a:hover {
     }
 }
 
+/*-----------------------------------*\
+|  #FOOTER                            |
+\*-----------------------------------*/
 footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-}
-
-.footer-grid {
+  }
+  
+  .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 20px;
     align-items: center;
     text-align: center;
-}
-
-.footer-left {
+  }
+  
+  .footer-left {
     text-align: left;
-}
-
-.footer-left h5 {
+  }
+  
+  .footer-left h5 {
     text-align: center;
     font-family: "David Libre";
     font-weight: 500;
-}
-
-.footer-left h2 {
+  }
+  
+  .footer-left h2 {
     text-align: center;
     font-family: "David Libre";
     font-size: 25px;
     font-weight: 700;
-}
-
-.title-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
-    border-bottom: none;
-    margin-bottom: 10px;
-}
-
-.title-text {
-    margin-right: 10px;
-    margin-left: 5%;
-    font-size: 24px;
-    font-weight: 500;
-    font-family: "David Libre", serif;
-}
-
-.divider {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #000000;
-    margin-left: 10px;
-}
-
-.cont-slider-novias {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    align-items: center;
-}
-
-.cont-slider-novias p {
-    font-family: "Crimson Pro";
-    font-size: 18px;
-}
-
-.cont-slider-novias .columnas {
-    align-items: center;
-    padding: 35px;
-    margin: 10px;
-    text-align: center;
-    max-width: 500px;
-}
-
-.linea {
-    border-top: 1px solid #000;
-    display: inline-block;
-    width: 55%;
-    margin: 20px;
-}
-
-.slidernovia {
-    overflow: hidden;
-    white-space: nowrap;
-    user-select: none;
-    cursor: grab;
-    background-color: #000;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-    border: 5px #000 solid;
-}
-.slidernovia img {
-    display: inline-block;
-    height: 250px;
-    width: auto;
-}
-
-.slidernovia h1 {
-    color: aqua;
-}
-
-.slidernovia p {
-    color: aquamarine;
-}
-
-.footer-center a {
+  }
+  
+  .footer-center a {
     color: #d8d8d8;
     text-decoration: none;
     display: block;
     font-family: "David Libre";
     margin: 5px 0;
     line-height: 20px;
-}
-
-.footer-center a:hover {
+  }
+  
+  .footer-center a:hover {
     color: #ffffff;
     text-decoration: underline;
-}
-
-.footer-right {
+  }
+  
+  .footer-right {
     text-align: right;
-}
-
-.footer-right a {
+  }
+  
+  .footer-right a {
     color: #fff;
     text-decoration: none;
     display: block;
@@ -438,14 +389,13 @@ footer {
     text-align: center;
     font-family: "David Libre";
     margin: 5px 0;
-}
-
-
-.footer-right .redes {
+  }
+  
+  .footer-right .redes {
     text-align: center;
-}
-
-.footer-right .redes a {
+  }
+  
+  .footer-right .redes a {
     color: #fff;
     display: inline-block;
     text-decoration: none;
@@ -458,78 +408,20 @@ footer {
     font-size: 20px;
     transition: 0.3s;
     text-align: center;
-}
-
-.footer-right .redes a:hover {
+  }
+  
+  .footer-right .redes a:hover {
     background-color: #fafeff;
     color: #000;
-}
-
-.copyright {
+  }
+  
+  .copyright {
     margin-top: 5px;
-}
-
-.map-title {
-    text-align: center;
-    color: #fff;
-    margin: 5px 0 25px 0;
-    font-weight: 600;
-}
-
-.map {
-    display: flex;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-}
-
-.map-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 20px 20px 20px;
-    padding: 15px 25px 25px 25px;
-    background-color: #000;
-    border-radius: 25px;
-    flex-direction: column;
-    max-width: 1100px;
-}
-
-.map-info {
-    font-size: 15px;
-}
-
-.map img {
-    width: 90%;
-    justify-content: right;
-}
-
-.map p {
-    color: #fff;
-    line-height: 30px;
-    font-size: 15px;
-}
-
-.map-btn {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    width: max-content;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 6px 20px;
-    border-radius: 15px;
-    transition: 300ms;
-    text-decoration: none;
-    border: solid white 2px;
-}
-
-.map-btn:hover {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-}
-
+  }
+  
+  /*-----------------------------------*\
+  |  #FIN FOOTER                        |
+  \*-----------------------------------*/
 
 /* SECCION RESPONSIVE */
 @media screen and (max-width: 920px) {
