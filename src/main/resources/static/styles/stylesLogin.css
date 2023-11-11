@@ -80,9 +80,4 @@ body::before {
     height: 100%;
     z-index: -1;
     filter: grayscale(90%); /* Aplicar escala de grises al 90% */
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> branch 'backendHeidy' of https://github.com/hesabeco/BodasyEventos.git

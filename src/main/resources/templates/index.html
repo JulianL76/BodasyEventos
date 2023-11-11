@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <!-- Menú encabezado -->
+    <!--HEADER -->
     <div class="contenedor-header">
         <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
         <header>
@@ -30,9 +30,9 @@
             <ul class="contenedor-item2">
                 <nav id="nav">
                     <ul class="menu" id="menu">
-                        <li><a href="#sobremi" onclick="seleccionar()">INICIO</a></li>
-                        <li><a href="">CATÁLOGO</a></li>
-                        <li><a href="">SOBRE NOSOTROS</a></li>
+                        <li><a href="/src/main/resources/templates/index.html">INICIO</a></li>
+                        <!-- <li><a href="">CATÁLOGO</a></li> -->
+                        <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
                     </ul>
                 </nav>
                 <ul>
@@ -42,24 +42,23 @@
                 </ul>
             </ul>
             <ul class="iconos contenedor-item3">
-                <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <!-- <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
                 <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
-                <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <!-- <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
             </ul>
 
         </header>
     </div>
-    <!-- INICIO -->
+    <!-- BANNER -->
     <div class="banner">
         <div class="container">
             <div class="slider-container has-scrollbar">
                 <div class="slider-item">
-                    <img src="/img/Matrimonio.jpg" alt="women's latest fashion sale"
-                        class="banner-img">
+                    <img src="/img/Matrimonio.jpg" alt="women's latest fashion sale" class="banner-img">
                     <div class="banner-content">
                         <p class="banner-subtitle">Novio y Novia</p>
                         <h2 class="banner-title">Trajes para toda ocasión.</h2>
-                        <a href="#" class="banner-btn">Agenda tu cita</a>
+                        <!-- <a href="#" class="banner-btn">Agenda tu cita</a> -->
                     </div>
                 </div>
                 <div class="slider-item">
@@ -74,8 +73,7 @@
                     </div>
                 </div>
                 <div class="slider-item">
-                    <img src="/img/Matrimonio.jpg" alt="new fashion summer sale"
-                        class="banner-img">
+                    <img src="/img/Matrimonio.jpg" alt="new fashion summer sale" class="banner-img">
                     <div class="banner-content">
                         <p class="banner-subtitle">Sale Offer</p>
                         <h2 class="banner-title">New fashion summer sale</h2>
@@ -88,11 +86,12 @@
             </div>
         </div>
     </div>
-    <!-- CATEGORIAS -->
+    <!-- DIVISOR -->
     <div class="title-section">
         <div class="title-text">Categorías</div>
         <div class="divider"></div>
     </div>
+    <!-- CATEGORIAS -->
     <div class="categorias">
         <div class="categoria">
             <img src="/img/Damas.png" alt="Categoría 1">
@@ -123,7 +122,7 @@
         </div>
     </div>
 
-    <section class="cont-slider-novias">
+    <section class="cont-slider-novias" id="sobreNosotros">
         <center>
             <div class="columnas">
                 <span class="linea"></span>
@@ -144,11 +143,10 @@
             <img src="/img/novia4.png" alt="Imagen 2">
             <img src="/img/novia5.png" alt="Imagen 2">
             <img src="/img/novia6.png" alt="Imagen 2">
-            <!-- Agrega más imágenes según sea necesario -->
         </div>
     </section>
-     <center>
-         <section class="map-container">
+    <center>
+        <section class="map-container">
             <h1 class="map-title">¿Donde nos ubicamos?</h1>
             <div class="map">
                 <div class="map-info">
@@ -156,10 +154,10 @@
                         Telefono: 6075831699<br>
                         Whatsapp: 317-6351588</p>
                     <br>
-                    <a href="#" class="map-btn">Como llegar</a>
+                    <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu" target="_blank" class="map-btn">Como llegar</a>
                 </div>
                 <div class="ubicacion">
-                    <img src="/img/map.png" alt="">
+                    <img src="/img/map.png" alt="Mapa">
                 </div>
             </div>
         </section>
@@ -171,11 +169,11 @@
                 <h5>LUCE ESPECTACULAR CON NOSOTROS</h5>
             </div>
             <div class="footer-center">
-                <a href="#">Política de Privacidad</a>
+                <!-- <a href="#">Política de Privacidad</a> -->
                 <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu"
                     target="_blank">Donde Encontrarnos</a>
-                <a href="#">Términos de Uso</a>
-                <a href="#">Preguntas y Respuestas</a>
+                <!-- <a href="#">Términos de Uso</a>
+                <a href="#">Preguntas y Respuestas</a> -->
             </div>
             <div class="footer-right">
                 <a href="#">Contacto</a>
@@ -184,7 +182,7 @@
                             class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/cucutabodasyeventos/?hl=es" target="_blank"><i
                             class="fa-brands fa-instagram"></i></a>
-                    <a href="wa.link/o443kq" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.link/yl10zh" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>

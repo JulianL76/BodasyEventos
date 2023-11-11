@@ -2,15 +2,7 @@ package com.app.web.entities;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -18,9 +10,9 @@ import lombok.Data;
 public class Traje {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTraje;
+    private Integer idTraje;
     private String nombre;
-    private int cantidadTotal;
+    private Integer cantidadTotal;
     @ManyToOne
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;

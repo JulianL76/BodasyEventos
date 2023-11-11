@@ -49,24 +49,40 @@ public class RolController {
 		return "configuracion";
 	}
 
+	@GetMapping("/inicio/configuracion")
+	public String panelDeConfig(Model model) {
+		Usuario usuario = new Usuario();
+		model.addAttribute("usuario", usuario);
+		List<Permiso> permisos = permisoRepository.findAll();
+		model.addAttribute("permisos", permisos);
+		List<Rol> roles = rolRepository.findAll();
+		model.addAttribute("roles", roles);
+		return "configuracion";
+	}
+
 	@PostMapping("/inicio/configuracion")
 	public String guardarRol(@RequestParam Map<String, String> params, @RequestParam String nombre, Model model) {
-		model.addAttribute("usuario", new Usuario());
-		Set<Integer> permisosActivados = params.keySet().stream().filter(key -> key.startsWith("permiso_"))
-				.map(key -> Integer.parseInt(key.replace("permiso_", ""))).collect(Collectors.toSet());
+		Set<Integer> permisosActivados = params.keySet().stream()
+				.filter(key -> key.startsWith("permiso_"))
+				.map(key -> Integer.parseInt(key.replace("permiso_", "")))
+				.collect(Collectors.toSet());
 		List<Rol> rolesExistentes = rolRepository.findAll();
 		// Variable para almacenar el rol existente con los mismos permisos
 		Rol rolExistenteConPermisos = null;
 		// Verificar si ya existe un rol con los mismos permisos
 		for (Rol rol : rolesExistentes) {
-			if (rol.getPermisos().stream().map(Permiso::getId).collect(Collectors.toSet()).equals(permisosActivados)) {
+			if (rol.getPermisos().stream()
+					.map(Permiso::getId)
+					.collect(Collectors.toSet())
+					.equals(permisosActivados)) {
 				rolExistenteConPermisos = rol;
 				break; // Rompe el bucle una vez que se encuentra un rol con los mismos permisos
 			}
 		}
 		if (rolExistenteConPermisos != null) {
 			model.addAttribute("error", "El rol " + rolExistenteConPermisos.getNombre() + " ya tiene estos permisos.");
-			panelDeConfig(model);
+			List<Permiso> permisos = permisoRepository.findAll();
+			model.addAttribute("permisos", permisos);
 			return "configuracion";
 		}
 		// Si no existe un rol con los mismos permisos, crea un nuevo rol
@@ -89,3 +105,5 @@ public class RolController {
 		return "redirect:/inicio/configuracion";
 	}
 }
+}
+

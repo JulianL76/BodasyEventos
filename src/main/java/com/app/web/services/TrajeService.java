@@ -36,5 +36,5 @@ public class TrajeService {
     public void borrarTraje(Integer id) {
         trajeRepository.deleteById(id);
     }
-   
+
 }
