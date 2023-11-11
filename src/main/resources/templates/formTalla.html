@@ -2,13 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario de Tallas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/styleAgregar.css">
 </head>
 <body>
     <h1>Formulario de Tallas</h1>
     <form method="post" th:object="${Talla}"
           th:action="${esEdicion} ? @{/inicio/talla/editar/{id}(id=${Talla.idTalla})} : @{/inicio/talla/nuevo}">
-        <input type="text" th:field="*{nombre}" placeholder="Nombre" />
-        <button type="submit">Guardar</button>
+        <input id="myText" type="text" th:field="*{nombre}" placeholder="Talla" />
+
+        <div class="centered-button">
+            <a th:href="@{/inicio}">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            <button type="submit" class="boton">Guardar</button>
+
+        </div>
     </form>
+    
+<script>
+    window.onload = function() {
+      document.getElementById("myText").focus();
+    };
+    </script>
 </body>
 </html>

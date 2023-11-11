@@ -7,92 +7,74 @@
     font-family: "Work Sans";
     margin: 0;
     padding: 0;
-}
+  }
 
 body {
-    font-family: "Work Sans";
-    background-color: #f8f8f8;
+    font-family: "Work Sans", sans-serif;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+    height: max-content;
+
 }
 
-html {
-    scroll-behavior: smooth;
+section{
+    margin-top: 120px;
+    height: 150%;
+    align-items: center;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
-    color: #000;
+    color: #333;
     margin-top: 20px;
 }
 
-.tabla-container {
-    margin-top: 125px;
-}
-
-table {
-    width: 70%;
+form {
+    width: 30%;
+    max-width: 400px;
     margin: 20px auto;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-th,
-td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #333;
-    color: #fff;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-a {
-    text-decoration: none;
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
-    padding: 8px 12px;
-    background-color: #000;
+    padding: 15px;
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 15px;
 }
 
 button:hover {
-    background-color: #333;
-}
-
-button.edit {
-    background-color: #0b7709;
-    color: #fff;
-}
-
-button.delete {
-    background-color: #A60505;
-    color: #fff;
+    background-color: #555;
 }
 
 .centered-button {
     text-align: center;
 }
 
-section{
-    height: 100%;
+.boton{
+    width: 88%;
+}
+
+a{
+    text-decoration: none;
 }
 
 /*-----------------------------------*\
@@ -103,9 +85,9 @@ header {
     -webkit-box-shadow: 0px 10px 5px -7px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 10px 5px -7px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 10px 5px -7px rgba(0, 0, 0, 0.15);
-}
-
-.contenedor-header {
+  }
+  
+  .contenedor-header {
     background: #fff;
     position: fixed;
     width: 100%;
@@ -113,57 +95,57 @@ header {
     left: 0;
     z-index: 99;
     border-top: 25px solid black;
-}
-
-.contenedor-header h6 {
+  }
+  
+  .contenedor-header h6 {
     text-align: center;
-}
-
-.contenedor-item1 {
+  }
+  
+  .contenedor-item1 {
     background-color: rgb(255, 255, 255);
-}
-
-.contenedor-item2 {
+  }
+  
+  .contenedor-item2 {
     background-color: rgb(255, 255, 255);
-}
-
-.contenedor-item3 {
+  }
+  
+  .contenedor-item3 {
     background-color: rgb(255, 255, 255);
-}
-
-.barra-negra {
+  }
+  
+  .barra-negra {
     color: rgb(255, 255, 255);
     text-align: center;
     margin-top: -20px;
     font-family: "Montserrat";
     font-weight: 500;
     font-size: 12px;
-}
-
-.contenedor-header header {
+  }
+  
+  .contenedor-header header {
     max-width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-}
-
-.contenedor-header header .logo a {
+  }
+  
+  .contenedor-header header .logo a {
     font-family: "David Libre";
     text-transform: uppercase;
     font-weight: 700;
     font-size: 36px;
     color: #000;
     text-decoration: none;
-}
-
-.contenedor-header header ul {
+  }
+  
+  .contenedor-header header ul {
     display: flex;
     list-style: none;
-}
-
-.contenedor-header header nav ul li a {
+  }
+  
+  .contenedor-header header nav ul li a {
     text-align: none;
     color: #000;
     margin: 0 15px;
@@ -171,53 +153,53 @@ header {
     transition: 0.5s;
     text-decoration: none;
     border-radius: 7px;
-}
-
-.contenedor-header header nav ul li a:hover {
+  }
+  
+  .contenedor-header header nav ul li a:hover {
     color: #ffffff;
     background-color: #000000;
     border-radius: 15px;
     background-size: 50px;
     text-align: center;
     padding: 15px;
-}
-
-.contenedor-header .iconos a {
+  }
+  
+  .contenedor-header .iconos a {
     text-align: none;
     color: #000;
     margin: 0 15px;
     padding: 0px;
     transition: 0.5s;
     text-decoration: none;
-}
-
-#menu li {
+  }
+  
+  #menu li {
     text-align: center;
     margin-right: 1px;
-}
-
-#menu li:last-child {
+  }
+  
+  #menu li:last-child {
     margin-right: 0;
-}
-
-#menu li a {
+  }
+  
+  #menu li a {
     display: block;
     padding: 10px 2px;
     text-decoration: none;
-}
-
-.nav-responsive {
+  }
+  
+  .nav-responsive {
     background-color: #000000;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     display: none;
-}
-
-/*-----------------------------------*\
-|  #FIN HEADER                        |
-\*-----------------------------------*/
+  }
+  
+  /*-----------------------------------*\
+  |  #FIN HEADER                        |
+  \*-----------------------------------*/
 
 /*-----------------------------------*\
 |  #FOOTER                            |
@@ -226,55 +208,53 @@ footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-    margin-top: 26px;
-    width: 100%;
-}
-
-.footer-grid {
+  }
+  
+  .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 20px;
     align-items: center;
     text-align: center;
-}
-
-.footer-left {
+  }
+  
+  .footer-left {
     text-align: left;
-}
-
-.footer-left h5 {
+  }
+  
+  .footer-left h5 {
     text-align: center;
     font-family: "David Libre";
     font-weight: 500;
-}
-
-.footer-left h2 {
+  }
+  
+  .footer-left h2 {
     text-align: center;
     font-family: "David Libre";
     font-size: 25px;
     font-weight: 700;
-}
-
-.footer-center a {
+  }
+  
+  .footer-center a {
     color: #d8d8d8;
     text-decoration: none;
     display: block;
     font-family: "David Libre";
     margin: 5px 0;
     line-height: 20px;
-}
-
-.footer-center a:hover {
+  }
+  
+  .footer-center a:hover {
     color: #ffffff;
     text-decoration: underline;
-}
-
-.footer-right {
+  }
+  
+  .footer-right {
     text-align: right;
-}
-
-.footer-right a {
+  }
+  
+  .footer-right a {
     color: #fff;
     text-decoration: none;
     display: block;
@@ -283,13 +263,13 @@ footer {
     text-align: center;
     font-family: "David Libre";
     margin: 5px 0;
-}
-
-.footer-right .redes {
+  }
+  
+  .footer-right .redes {
     text-align: center;
-}
-
-.footer-right .redes a {
+  }
+  
+  .footer-right .redes a {
     color: #fff;
     display: inline-block;
     text-decoration: none;
@@ -302,19 +282,24 @@ footer {
     font-size: 20px;
     transition: 0.3s;
     text-align: center;
-}
-
-.footer-right .redes a:hover {
+  }
+  
+  .footer-right .redes a:hover {
     background-color: #fafeff;
     color: #000;
-}
-
-.copyright {
+  }
+  
+  .copyright {
     margin-top: 5px;
-}
-
-/*-----------------------------------*\
+  }
+  
+  /*-----------------------------------*\
   |  #FIN FOOTER                        |
   \*-----------------------------------*/
 
-  
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+}
