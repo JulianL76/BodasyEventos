@@ -14,22 +14,22 @@
 <body>
 
     <div class="contenedor-header">
-        <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
+        <h4 class="barra-negra">Bodas y Eventos, Sistema de Gestión</h4>
         <header>
             <ul>
                 <li class="contenedor-item1">
                     <div class="logo">
                         <a href="#">Bodas & Eventos</a>
-                        <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
+                        <h6>PANEL DE GESTIÓN</h6>
                     </div>
                 </li>
             </ul>
             <ul class="contenedor-item2">
                 <nav id="nav">
                     <ul class="menu" id="menu">
-                        <li><a href="#sobremi" onclick="seleccionar()">INICIO</a></li>
-                        <li><a href="">CATÁLOGO</a></li>
-                        <li><a href="">SOBRE NOSOTROS</a></li>
+                        <li><a th:href="@{/inicio}">MENU</a></li>
+                        <!-- <li><a href="">CATÁLOGO</a></li>
+                        <li><a href="">SOBRE NOSOTROS</a></li> -->
                     </ul>
                 </nav>
                 <ul>
@@ -39,69 +39,79 @@
                 </ul>
             </ul>
             <ul class="iconos contenedor-item3">
-                <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <!-- <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
                 <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
-                <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <!-- <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
             </ul>
 
         </header>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <!-- 	------------------------------------------------------------------------------- -->
-                <form th:action="@{/registro}" method="post" th:object="${usuario}">
-                    <h1>Registro</h1>
-                    <div th:if=${param.exito}>
-                        <div class="alert alert-info">Se ha registrado exitosamente a
-                            la aplicación</div>
-                    </div>
-                    <div th:if=${param.error}>
-                        <div class="alert alert-info">El correo ya esta en uso</div>
-                    </div>
-                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-                    <input id="email" type="email" name="email" placeholder="Email" required>
-                    <input id="password" type="password" name="password" placeholder="Contraseña" required>
-                    <div class="form-group">
-                        <label class="control-label" for="rol">Rol :</label> <select id="rol" class="form-control"
-                            th:field="*{rol}">
-                            <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
-                        </select>
-                        <button type="submit" class="btn btn-success">Registrar</button>
-                    </div>
-                </form>
-
-                <!-- 	------------------------------------------------------------------------------- -->
-                <form th:action="@{/inicio/configuracion}" method="post">
-                    <!-- Mensaje de error (si existe) -->
-                    <div th:if="${error}" class="alert alert-danger">
-                        <p th:text="${error}"></p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label> <input id="nombre" name="nombre" type="text"
-                            class="form-control" required autofocus="autofocus" placeholder="nombre de rol">
-                    </div>
-                    <!-- sección para seleccionar permisos -->
-                    <div class="form-group">
-                        <label>Permisos:</label>
-                        <th:block th:each="permiso : ${permisos}">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" th:id="'permiso_' + ${permiso.id}"
-                                    th:name="'permiso_' + ${permiso.id}" value="1"> <label class="form-check-label"
-                                    th:for="'permiso_' + ${permiso.id}" th:text="${permiso.nombre}"></label>
-                            </div>
-                        </th:block>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Guardar Rol</button>
-                    </div>
-                </form>
-                <!-- 	------------------------------------------------------------------------------- -->
+    <section class="columnas">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form th:action="@{/registro}" method="post" th:object="${usuario}">
+                        <h1>Registro Usuario</h1>
+                        <div th:if=${param.exito}>
+                            <div class="check alert-info">Se ha registrado exitosamente a
+                                la aplicación</div>
+                        </div>
+                        <div th:if=${param.error}>
+                            <div class="alert alert-info">El correo ya esta en uso</div>
+                        </div>
+                        <label for="nombre">Ingrese Nombre:</label><input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
+                        <label for="nombre">Ingrese Correo:</label><input id="email" type="email" name="email" placeholder="Email" required>
+                        <label for="nombre">Ingrese Contraseña:</label><input id="password" type="password" name="password" placeholder="Contraseña" required>
+                        <div class="form-group">
+                            <label class="control-label" for="rol">Rol :</label> <select id="rol" class="form-control"
+                                th:field="*{rol}">
+                                <option th:each="rol: ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
+                            </select>
+                            <button type="submit" class="btn btn-success">Registrar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form th:action="@{/inicio/configuracion}" method="post">
+                        <h1>Registro Rol</h1>
+                        <div th:if="${error}" class="alert alert-danger">
+                            <p th:text="${error}"></p>
+                        </div>
+                        <div th:if=${param.exito}>
+                            <div class="check alert-info">Se ha creado exitosamente el Rol.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label> <input id="nombre" name="nombre" type="text"
+                                class="form-control" required autofocus="autofocus" placeholder="Nombre de Rol">
+                        </div>
+                        <!-- sección para seleccionar permisos -->
+                        <div class="form-group">
+                            <label>Permisos:</label>
+                            <th:block th:each="permiso : ${permisos}">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" th:id="'permiso_' + ${permiso.id}"
+                                        th:name="'permiso_' + ${permiso.id}" value="1"> <label class="form-check-label"
+                                        th:for="'permiso_' + ${permiso.id}" th:text="${permiso.nombre}"></label>
+                                </div>
+                            </th:block>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Guardar Rol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer>
         <div class="footer-grid">
@@ -110,11 +120,11 @@
                 <h5>LUCE ESPECTACULAR CON NOSOTROS</h5>
             </div>
             <div class="footer-center">
-                <a href="#">Política de Privacidad</a>
+                <!-- <a href="#">Política de Privacidad</a> -->
                 <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu"
                     target="_blank">Donde Encontrarnos</a>
-                <a href="#">Términos de Uso</a>
-                <a href="#">Preguntas y Respuestas</a>
+                <!-- <a href="#">Términos de Uso</a>
+                <a href="#">Preguntas y Respuestas</a> -->
             </div>
             <div class="footer-right">
                 <a href="#">Contacto</a>

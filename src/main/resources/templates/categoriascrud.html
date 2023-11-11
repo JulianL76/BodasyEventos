@@ -2,14 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lista de Categorías</title>
+    <link rel="stylesheet" href="/styles/styleTallas.css">
 </head>
 <body>
     <h1>Lista de Categorías</h1>
     <table>
         <tr>
             <th>ID</th>
-            <th>Nombreskdkdkdk</th>
+            <th>Nombre</th>
             <th>Acciones</th>
+            <th>Si</th>
         </tr>
         <tr th:each="categoria : ${categorias}">
             <td th:text="${categoria.idCategoria}"></td>

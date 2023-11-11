@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Formulario de Traje</title>
+    <title>Formulario de Trajes</title>
+    <link rel="stylesheet" href="/styles/styleRegistrarTraje.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <h1>Formulario de Traje</h1>
+    <h1>Formulario de Trajes</h1>
     <form method="post" enctype="multipart/form-data" th:object="${traje}" th:action="@{/inicio/registroTraje/nuevo}">
-            <div>
+        <div>
             <label for="nombre">Cantidad:</label>
             <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" />
         </div>
@@ -16,18 +22,27 @@
         </div>
         <div>
 
-            <label class="control-label" for="categoria">categoria :</label> 
-            <select
-							id="categoria" class="form-control" th:field="*{categoria}">
-							<option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
-								th:text="${categoria.nombre}"></option>
-			</select>
+            <label class="control-label" for="categoria">categoria :</label>
+            <select id="categoria" class="form-control" th:field="*{categoria}">
+                <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
+                    th:text="${categoria.nombre}"></option>
+            </select>
         </div>
         <div>
             <label for="file">Imagen:</label>
             <input type="file" name="file" id="file" accept="image/*" />
         </div>
-        <button type="submit">Guardar</button>
+
+        <div class="centered-button">
+            <a th:href="@{/inicio}">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+            <a href="#">
+                <button type="submit">Guardar</button>
+            </a>
+        </div>
+
     </form>
 </body>
+
 </html>
