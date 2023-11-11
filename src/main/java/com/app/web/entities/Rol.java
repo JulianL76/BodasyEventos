@@ -11,17 +11,14 @@ import java.util.Set;
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String nombre;
     @OneToMany(mappedBy = "rol")
     private List<Usuario> usuarios;
     @ManyToMany
-    @JoinTable(
-        name = "rol_permiso",
-        joinColumns = @JoinColumn(name = "idRol"),
-        inverseJoinColumns = @JoinColumn(name = "idPermiso")
-    )
+    @JoinTable(name = "rol_permiso", joinColumns = @JoinColumn(name = "idRol"), inverseJoinColumns = @JoinColumn(name = "idPermiso"))
     private Set<Permiso> permisos;
+
     @Override
     public String toString() {
         return nombre;
