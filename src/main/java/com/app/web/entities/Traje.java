@@ -24,8 +24,7 @@ public class Traje {
     @ManyToOne
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
-    @Lob
-    private byte[] imagenes;
+    private List<String> imagenes;
     @ManyToMany
     @JoinTable(
         name = "Unidad",

@@ -64,11 +64,17 @@ public class SecurityConfig {
 	        String username = authentication.getName();
 	        Usuario usuario = usuarioRepository.findByEmail(username);  
 	        if (usuario != null) {
-	        	HttpSession session = request.getSession();
-	            session.setAttribute("usuarioId", usuario.getId());
-	            response.sendRedirect("/inicio");
-	            return;
-	        }    
+	        	if (usuario.isActivo()) {
+		            // El usuario está activo, redirige a la página deseada (por ejemplo, /inicio)
+		            HttpSession session = request.getSession();
+		            session.setAttribute("usuarioId", usuario.getId());
+		            response.sendRedirect("/inicio");
+		            return;
+		        } else {
+		            // El usuario está inactivo, redirige a una página de error o a la página de inicio de sesión
+		            response.sendRedirect("/inactivo"); 
+		        }
+	        }   
 	    }
 	
 	@Bean

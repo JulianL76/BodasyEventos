@@ -15,29 +15,30 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<h1>Inicio de sesión</h1>
-			<!-- 	------------------------------------------------------------------------------- -->
+				<!-- 	------------------------------------------------------------------------------- -->
 				<form th:action="@{/registro}" method="post" th:object="${usuario}">
-				     <h1>Registro</h1>
-				      <div th:if=${param.exito}>
-					<div class="alert alert-info">Se ha registrado exitosamente a
-						la aplicación</div>
-				    </div>
-				    <div th:if=${param.error}>
-					<div class="alert alert-info">El correo ya esta en uso</div>
-				    </div>
-					 <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-                     <input id="email" type="email" name="email" placeholder="Email" required>
-                    <input id="password" type="password" name="password" placeholder="Contraseña" required>
-                    <div class="form-group">
+					<h1>Registro</h1>
+					<div th:if=${param.exito}>
+						<div class="alert alert-info">Se ha registrado exitosamente
+							a la aplicación</div>
+					</div>
+					<div th:if=${param.error}>
+						<div class="alert alert-info">El correo ya esta en uso</div>
+					</div>
+					<input id="nombre" type="text" name="nombre" placeholder="Nombre"
+						required> <input id="email" type="email" name="email"
+						placeholder="Email" required> <input id="password"
+						type="password" name="password" placeholder="Contraseña" required>
+					<div class="form-group">
 						<label class="control-label" for="rol">Rol :</label> <select
 							id="rol" class="form-control" th:field="*{rol}">
 							<option th:each="rol : ${roles}" th:value="${rol.id}"
 								th:text="${rol.nombre}"></option>
 						</select>
-				   <button type="submit" class="btn btn-success">Registrar</button>
+						<button type="submit" class="btn btn-success">Registrar</button>
 					</div>
 				</form>
-				
+
 				<!-- 	------------------------------------------------------------------------------- -->
 				<form th:action="@{/inicio/configuracion}" method="post">
 					<!-- Mensaje de error (si existe) -->
@@ -67,9 +68,34 @@
 						<button type="submit" class="btn btn-primary">Guardar Rol</button>
 					</div>
 				</form>
-				
+
 				<!-- 	------------------------------------------------------------------------------- -->
-				
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Correo Electrónico</th>
+							<th scope="col">Rol</th>
+							<th scope="col">Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="usuario : ${usuarios}">
+							<td th:text="${usuario.nombre}">Nombre</td>
+							<td th:text="${usuario.email}">Correo
+								Electrónico</td>
+							<td th:text="${usuario.rol}">Rol</td>
+							<td><a th:href="@{'/usuarios/' + ${usuario.id} + '/editar'}"
+								class="btn btn-secondary">Editar</a> 
+						    <a th:unless="${usuario.id == 2}" th:href="@{'/usuarios/' + ${usuario.id} + '/toggle-activo'}"
+                            class="btn btn-warning" th:text="${usuario.activo ? 'Inactivar' : 'Activar'}">
+                               </a>
+								<a th:href="@{'/usuarios/' + ${usuario.id} + '/cambiarcontraseña'}"
+								class="btn btn-danger">Cambiar Contraseña</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 
 			</div>
 		</div>
