@@ -25,5 +25,4 @@ public class RegistroController {
     public String inactivo() {
         return "inactivo";
     }
-
 }
