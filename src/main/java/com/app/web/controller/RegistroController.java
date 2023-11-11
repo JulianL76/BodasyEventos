@@ -21,4 +21,9 @@ public class RegistroController {
         return "paneldeinicio";
     }
 
+    @GetMapping("/inactivo")
+    public String inactivo() {
+        return "inactivo";
+    }
+
 }

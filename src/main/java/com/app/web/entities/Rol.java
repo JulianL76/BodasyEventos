@@ -22,5 +22,8 @@ public class Rol {
         inverseJoinColumns = @JoinColumn(name = "idPermiso")
     )
     private Set<Permiso> permisos;
-    
+    @Override
+    public String toString() {
+        return nombre;
+    }
 }
