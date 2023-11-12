@@ -60,9 +60,12 @@
                         <div th:if=${param.error}>
                             <div class="alert alert-info">El correo ya esta en uso</div>
                         </div>
-                        <label for="nombre">Ingrese Nombre:</label><input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-                        <label for="nombre">Ingrese Correo:</label><input id="email" type="email" name="email" placeholder="Email" required>
-                        <label for="nombre">Ingrese Contraseña:</label><input id="password" type="password" name="password" placeholder="Contraseña" required>
+                        <label for="nombre">Ingrese Nombre:</label><input id="nombre" type="text" name="nombre"
+                            placeholder="Nombre" required>
+                        <label for="nombre">Ingrese Correo:</label><input id="email" type="email" name="email"
+                            placeholder="Email" required>
+                        <label for="nombre">Ingrese Contraseña:</label><input id="password" type="password"
+                            name="password" placeholder="Contraseña" required>
                         <div class="form-group">
                             <label class="control-label" for="rol">Rol :</label> <select id="rol" class="form-control"
                                 th:field="*{rol}">
@@ -109,11 +112,13 @@
                 </div>
             </div>
         </div>
-         <a href="/inicio/configuracion/usuarios"><button>
-          <i class="fas fa-tshirt"></i>Ver Usuarios</button>
-      </a>
     </section>
 
+    <div class="boton-usuario">
+        <a href="/inicio/configuracion/usuarios"><button>
+                <i class="fas fa-tshirt"></i>Ver Usuarios</button>
+        </a>
+    </div>
 
     <footer>
         <div class="footer-grid">
