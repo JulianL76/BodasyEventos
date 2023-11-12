@@ -75,7 +75,6 @@
             </div>
         </div>
 
-
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -84,7 +83,7 @@
                         <div th:if="${error}" class="alert alert-danger">
                             <p th:text="${error}"></p>
                         </div>
-                        <div th:if=${param.exito}>
+                        <div th:if=${param.exito1}>
                             <div class="check alert-info">Se ha creado exitosamente el Rol.</div>
                         </div>
 
@@ -110,6 +109,9 @@
                 </div>
             </div>
         </div>
+         <a href="/inicio/configuracion/usuarios"><button>
+          <i class="fas fa-tshirt"></i>Ver Usuarios</button>
+      </a>
     </section>
 
 

@@ -51,4 +51,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuarioExistente = usuarioRepository.findByEmail(email);
         return usuarioExistente != null;
     }
+
+    @Override
+	public Usuario obtenerUsuarioPorId(Integer id) {
+		Usuario usuario = usuarioRepository.findById(id).get();
+	    return usuario;
+	}
 }

@@ -13,6 +13,7 @@
     <h1>Formulario de Trajes</h1>
     <form method="post" enctype="multipart/form-data" th:object="${traje}" th:action="@{/inicio/registroTraje/nuevo}">
         <div>
+
         <label for="nombre">Cantidad:</label>
         <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" />
     </div>
@@ -21,6 +22,7 @@
         <input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre" />
     </div>
     <div>
+
 
         <label class="control-label" for="categoria">categoria :</label> 
         <select
