@@ -25,10 +25,10 @@ public class SecurityConfig {
 	private UsuarioRepository usuarioRepository;
 
 	@Autowired
-	@SuppressWarnings({ "deprecation" })
+	@SuppressWarnings({ "deprecation", "removal" })
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeRequests(requests -> requests
+		http.authorizeRequests()
 				.requestMatchers("/").permitAll()
 				.requestMatchers("/registro**").permitAll()
 				.requestMatchers("/login**").permitAll()
@@ -39,19 +39,21 @@ public class SecurityConfig {
 				.requestMatchers("/admin/**").hasAuthority("ADMIN")
 				.requestMatchers("/cliente/**").hasAuthority("CLIENTE")
 				.requestMatchers("/entrenador/**").hasAuthority("ENTRENADOR")
-				.anyRequest().authenticated())
-				.formLogin(login -> login
-						.loginPage("/login")
-						.successHandler((request, response, authentication) -> {
-							redirectAfterLogin(authentication, response, request);
-						})
-						.permitAll())
-				.logout(logout -> logout
-						.invalidateHttpSession(true)
-						.clearAuthentication(true)
-						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-						.logoutSuccessUrl("/login?logout")
-						.permitAll());
+				.anyRequest().authenticated()
+				.and()
+				.formLogin()
+				.loginPage("/login")
+				.successHandler((request, response, authentication) -> {
+					redirectAfterLogin(authentication, response, request);
+				})
+				.permitAll()
+				.and()
+				.logout()
+				.invalidateHttpSession(true)
+				.clearAuthentication(true)
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+				.logoutSuccessUrl("/login?logout")
+				.permitAll();
 
 		return http.build();
 	}

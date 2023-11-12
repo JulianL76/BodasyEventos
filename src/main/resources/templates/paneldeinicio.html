@@ -15,6 +15,7 @@
   <h1>Bienvenido al Panel de Administración</h1>
 
   <div class="button-container">
+
       <a th:if="${permisos.![nombre].contains('Configuración')}" href="/inicio/configuracion"><button>
           <i class="fas fa-cogs"></i>Configuración</button>
       </a>
@@ -30,6 +31,7 @@
       <a th:if="${permisos.![nombre].contains('Control Tallas')}" href="/inicio/talla"><button>
           <i class="fas fa-ruler"></i>Control Tallas</button>
       </a>
+
   </div>
 </body>
 
