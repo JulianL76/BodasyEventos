@@ -7,9 +7,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -88,4 +91,61 @@ public class RolController {
 		}
 		return "redirect:/inicio/configuracion";
 	}
+	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	    public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
+	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+	        model.addAttribute("usuario", usuario);
+	        return "cambioContraseña";
+	    }
+
+	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	    public String cambiarContrasena(@PathVariable Integer id, @RequestParam String nuevaContrasena) {
+	        // Actualizar la contraseña del usuario en la base de datos
+	    	 Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+	    	 usuario.setPassword(nuevaContrasena);
+	    	 usuarioService.guardar(usuario);
+	        return "redirect:/inicio/configuracion/usuarios"; // Redirige a la lista de usuarios u otra página
+	    }
+	    
+	    @GetMapping("/inicio/configuracion/usuarios")
+		public String listUsuarios(Model model) {
+	    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			 String username = authentication.getName();
+		     Usuario usuario = usuarioRepository.findByEmail(username);
+		     Integer idUsuarioActual = usuario.getId();
+	    	 // Obtener el nombre de usuario del objeto Authentication
+	         // Supongamos que el nombre de usuario es la identificación única para tu caso
+	   
+	    	List<Usuario> usuarios = usuarioService.listarUsuarios();
+			model.addAttribute("usuarios", usuarios);
+			model.addAttribute("idUsuarioActual", idUsuarioActual);
+			return "listUsuarios";
+		}
+	    
+	    @GetMapping("/usuarios/{id}/editar")
+	    public String mostrarFormularioDeEdicion(@PathVariable Integer id, Model model) {
+	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+	        if (usuario != null) {
+	            model.addAttribute("usuario", usuario);
+	            List<Rol> roles = rolRepository.findAll();
+	    		model.addAttribute("roles", roles);
+	            return "editar"; 
+	        } else {
+	            return "redirect:/inicio/configuracion/usuarios?error";
+	        }
+	    }
+	    
+	    @PostMapping("/usuarios/{id}/editar")
+	    public String editarCuentaDePersona(@ModelAttribute("usuario") Usuario usuario) {
+	        Usuario usuarioExistente = usuarioService.obtenerUsuarioPorId(usuario.getId());
+	        if (usuarioExistente != null) {
+	            usuarioExistente.setNombre(usuario.getNombre());
+	            usuarioExistente.setEmail(usuario.getEmail());
+	            usuarioExistente.setRol(usuario.getRol());
+	            usuarioService.guardar(usuarioExistente);
+	            return "redirect:/inicio/configuracion/usuarios?exito=Se han guardado los cambios con exito";
+	        } else {
+	            return "redirect:/inicio/configuracion/usuarios?error=No se han podido guardar los cambios";
+	        }
+	    }
 }

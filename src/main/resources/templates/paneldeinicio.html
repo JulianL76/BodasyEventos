@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -15,19 +15,19 @@
   <h1>Bienvenido al Panel de Administración</h1>
 
   <div class="button-container">
-      <a href="/inicio/configuracion"><button>
+      <a th:if="${permisos.![nombre].contains('Configuración')}" href="/inicio/configuracion"><button>
           <i class="fas fa-cogs"></i>Configuración</button>
       </a>
 
-      <a href="/inicio/registroTraje"><button>
+      <a th:if="${permisos.![nombre].contains('Registro Traje')}" href="/inicio/registroTraje"><button>
           <i class="fas fa-tshirt"></i>Registro Traje</button>
       </a>
 
-      <a href="/inicio/categoria"><button>
+      <a th:if="${permisos.![nombre].contains('Control Categoria')}" href="/inicio/categoria"><button>
           <i class="fas fa-tags"></i>Control Categoría</button>
       </a>
 
-      <a href="/inicio/talla"><button>
+      <a th:if="${permisos.![nombre].contains('Control Tallas')}" href="/inicio/talla"><button>
           <i class="fas fa-ruler"></i>Control Tallas</button>
       </a>
   </div>

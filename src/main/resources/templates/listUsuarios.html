@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+	integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Categorias</title>
+<link rel="stylesheet"
+	href="/src/main/resources/static/styles/styleCategorias.css">
+</head>
+<body>
+	<!-- 	------------------------------------------------------------------------------- -->
+	<div th:if="${param.exito}">
+		<div class="alert alert-info" th:text="${param.exito}"></div>
+	</div>
+	<div th:if="${param.error}">
+		<div class="alert alert-danger" th:text="${param.error}"></div>
+	</div>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">Nombre</th>
+				<th scope="col">Correo Electrónico</th>
+				<th scope="col">Rol</th>
+				<th scope="col">Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario : ${usuarios}">
+				<td th:text="${usuario.nombre}">Nombre</td>
+				<td th:text="${usuario.email}">Correo Electrónico</td>
+				<td th:text="${usuario.rol}">Rol</td>
+				<td>
+					<a th:unless="${usuario.id == idUsuarioActual || usuario.id == 2}"
+					th:href="@{'/usuarios/' + ${usuario.id} + '/toggle-activo'}"
+					class="btn btn-warning"
+					th:text="${usuario.activo ? 'Inactivar' : 'Activar'}"> </a> <a
+					th:href="@{'/usuarios/' + ${usuario.id} + '/editar'}"
+					class="btn btn-danger">Editar</a> <a
+					th:href="@{'/inicio/configuracion/usuarios/' + ${usuario.id} + '/cambiarcontraseña'}"
+					class="btn btn-danger">Cambiar Contraseña</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
