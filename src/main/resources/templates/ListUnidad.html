@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Unidades</title>
+</head>
+<body>
+
+<h2>Lista de Unidades</h2>
+<a th:href="@{/inicio/Inventario/crear}">Nueva unidad</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID Traje</th>
+            <th>Nombre del Traje</th>
+            <th>Categoría</th>
+            <th>ID Talla</th>
+            <th>Talla</th>
+            <th>Cantidad</th>
+            <th>Precio de Alquiler</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Itera sobre la lista de unidades y muestra la información -->
+        <tr th:each="unidad : ${unidades}">
+            <td th:text="${unidad.unidadPK.traje.idTraje}"></td>
+            <td th:text="${unidad.unidadPK.traje.nombre}"></td>
+            <td th:text="${unidad.unidadPK.traje.categoria.nombre}"></td>
+            <td th:text="${unidad.unidadPK.talla.idTalla}"></td>
+            <td th:text="${unidad.unidadPK.talla.nombre}"></td>
+            <td th:text="${unidad.cantidad}"></td>
+            <td th:text="${unidad.precioAlquiler}"></td>
+            <td>
+                <!-- Enlaces para operaciones CRUD -->
+                <a th:href="@{'/unidades/editar/' + ${unidad.unidadPK.traje.idTraje} + '/' + ${unidad.unidadPK.talla.idTalla}}">Editar</a>
+                <a th:href="@{'/unidades/borrar/' + ${unidad.unidadPK.traje.idTraje} + '/' + ${unidad.unidadPK.talla.idTalla}}">Borrar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
