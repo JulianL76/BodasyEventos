@@ -3,45 +3,112 @@
 
 <head>
     <title>Formulario de Trajes</title>
-    <link rel="stylesheet" href="/styles/styleRegistrarTraje.css">
+    <link rel="stylesheet" href="/styles/styleAgregar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <h1>Formulario de Trajes</h1>
+
+    <section>
+        <div class="contenedor-header">
+            <h4 class="barra-negra">Bodas y Eventos, Sistema de Gestión</h4>
+            <header>
+                <ul>
+                    <li class="contenedor-item1">
+                        <div class="logo">
+                            <a href="#">Bodas & Eventos</a>
+                            <h6>SISTEMA DE GESTIÓN</h6>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contenedor-item2">
+                    <nav id="nav">
+                        <ul class="menu" id="menu">
+                            <li><a th:href="@{/inicio}">MENU</a></li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </ul>
+                </ul>
+                <ul class="iconos contenedor-item3">
+                    <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
+                </ul>
+
+            </header>
+        </div>
+    </section>
+
+    <h1>Agregar Nuevo Traje</h1>
     <form method="post" enctype="multipart/form-data" th:object="${traje}" th:action="@{/inicio/registroTraje/nuevo}">
         <div>
+            <label for="nombre">Cantidad Disponible:</label>
+            <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" disabled/>
+        </div>
 
-        <label for="nombre">Cantidad:</label>
-        <input type="text" th:field="*{cantidadTotal}" id="cantidadTotal" placeholder="cantidadTotal" />
-    </div>
-    <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre" />
-    </div>
-    <div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre" required />
+        </div>
+        <div>
+            <label class="control-label" for="categoria">Categoria :</label>
+            <select id="categoria" th:field="*{categoria}">
+                <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
+                    th:text="${categoria.nombre}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="file">Selecione Imagen :</label>
+            <input class="archivo" type="file" name="images" onchange="loadFile(event)" multiple required />
+            <div style="text-align: center;">
+                <img class="form-imagen" id="output"/>
+            </div>
+        </div>
+        <div class="centered-button">
+            <button type="button" onclick="window.location.href='/inicio/registroTraje';"><i
+                    class="fa-solid fa-arrow-left"></i></button>
+            <button type="submit" class="boton">Guardar</button>
+        </div>
+    </form>
 
+    
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-left">
+                <h2>BODAS & EVENTOS</h2>
+                <h5>LUCE ESPECTACULAR CON NOSOTROS</h5>
+            </div>
+            <div class="footer-center">
+                <!-- <a href="#">Política de Privacidad</a> -->
+                <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu"
+                    target="_blank">Donde Encontrarnos</a>
+                <!-- <a href="#">Términos de Uso</a>
+                <a href="#">Preguntas y Respuestas</a> -->
+            </div>
+            <div class="footer-right">
+                <a href="#">Contacto</a>
+                <div class="redes">
+                    <a href="https://www.facebook.com/bodas.eventos11/?locale=es_LA" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cucutabodasyeventos/?hl=es" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/yl10zh" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2023 BODAS Y EVENTOS. Todos los derechos reservados.</p>
+    </footer>
 
-        <label class="control-label" for="categoria">categoria :</label> 
-        <select
-                        id="categoria" class="form-control" th:field="*{categoria}">
-                        <option th:each="categoria : ${categorias}" th:value="${categoria.idCategoria}"
-                            th:text="${categoria.nombre}"></option>
-        </select>
-    </div>
-    <div>
-        <label for="file">Imagen:</label>
-      <input type="file" name="images" multiple />
-    </div>
-    <div class="centered-button">
-        <a th:href="@{/inicio}">
-        <button><i class="fa-solid fa-arrow-left"></i></button>
-        </a>
-            <button type="submit">Guardar</button>
-    </div>
-</form>
+    <script>
+        var loadFile = function(event) {
+          var image = document.getElementById('output');
+          image.src = URL.createObjectURL(event.target.files[0]);
+        };
+      </script>
 </body>
 
 </html>

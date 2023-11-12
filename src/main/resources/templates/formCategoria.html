@@ -42,21 +42,21 @@
         </div>
     </section>
 
-    <section>
-        <h1>Formulario de Categoria</h1>
+
+        <h1>Añadir Categoria</h1>
         <form method="post" th:object="${categoria}"
             th:action="${esEdicion} ? @{/inicio/categoria/editar/{id}(id=${categoria.idCategoria})} : @{/inicio/categoria/nuevo}">
-            <input type="text" th:field="*{nombre}" placeholder="Nombre" />
+            <label for="nombre">Ingrese Nombre:</label>
+            <input type="text" th:field="*{nombre}" placeholder="Nombre de Categoria" />
 
-            <div class="centered-button">
+            <div class="centered-button top-margin">
                 <a th:href="@{/inicio}">
                     <button><i class="fa-solid fa-arrow-left"></i></button>
                 </a>
                 <button type="submit" class="boton">Guardar</button>
-
             </div>
         </form>
-    </section>
+
 
     <footer>
         <div class="footer-grid">

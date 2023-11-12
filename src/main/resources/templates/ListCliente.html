@@ -1,38 +1,119 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="/styles/styleTablas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
-<h2>Lista de Clientes</h2>
+    <section>
+        <div class="contenedor-header">
+            <h4 class="barra-negra">Bodas y Eventos, Sistema de Gestión</h4>
+            <header>
+                <ul>
+                    <li class="contenedor-item1">
+                        <div class="logo">
+                            <a href="#">Bodas & Eventos</a>
+                            <h6>SISTEMA DE GESTIÓN</h6>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="contenedor-item2">
+                    <nav id="nav">
+                        <ul class="menu" id="menu">
+                            <li><a th:href="@{/inicio}">MENU</a></li>
+                        </ul>
+                    </nav>
+                    <ul>
+                        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </ul>
+                </ul>
+                <ul class="iconos contenedor-item3">
+                    <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
+                </ul>
 
-<a th:href="@{/inicio/cliente/nuevo}">Nuevo Cliente</a>
+            </header>
+        </div>
+    </section>
 
-<table border="1">
-    <tr>
-        <th>Cédula</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Correo</th>
-        <th>Dirección</th>
-        <th>Teléfono</th>
-        <th>Acciones</th>
-    </tr>
-    <tr th:each="cliente : ${clientes}">
-        <td th:text="${cliente.cedula}"></td>
-        <td th:text="${cliente.nombre}"></td>
-        <td th:text="${cliente.apellido}"></td>
-        <td th:text="${cliente.correo}"></td>
-        <td th:text="${cliente.direccion}"></td>
-        <td th:text="${cliente.telefono}"></td>
-        <td>
-            <a th:href="@{/inicio/cliente/{cedula}/editar(cedula=${cliente.cedula})}">Editar</a>
-            <a th:href="@{/inicio/cliente/eliminar/{cedula}(cedula=${cliente.cedula})}">Eliminar</a>
-        </td>
-    </tr>
-</table>
+
+    <section class="tabla-container">
+        <h1>Lista de Clientes</h1>
+        <table>
+            <tr>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.cedula}"></td>
+                <td th:text="${cliente.nombre}"></td>
+                <td th:text="${cliente.apellido}"></td>
+                <td th:text="${cliente.correo}"></td>
+                <td th:text="${cliente.direccion}"></td>
+                <td th:text="${cliente.telefono}"></td>
+                <td>
+                    <a th:href="@{/inicio/cliente/{cedula}/editar(cedula=${cliente.cedula})}">
+                        <button class="edit"><i class="fas fa-edit"></i></button>
+                    </a>
+                    <a th:href="@{/inicio/cliente/eliminar/{cedula}(cedula=${cliente.cedula})}">
+                        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                    </a>
+                </td>
+            </tr>
+
+
+        </table>
+        <div class="centered-button">
+            <a th:href="@{/inicio}">
+                <button><i class="fa-solid fa-arrow-left"></i></button>
+            </a>
+
+            <a th:href="@{/inicio/cliente/nuevo}">
+                <button>Nuevo Cliente</button>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-left">
+                <h2>BODAS & EVENTOS</h2>
+                <h5>LUCE ESPECTACULAR CON NOSOTROS</h5>
+            </div>
+            <div class="footer-center">
+                <!-- <a href="#">Política de Privacidad</a> -->
+                <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu"
+                    target="_blank">Donde Encontrarnos</a>
+                <!-- <a href="#">Términos de Uso</a>
+            <a href="#">Preguntas y Respuestas</a> -->
+            </div>
+            <div class="footer-right">
+                <a href="#">Contacto</a>
+                <div class="redes">
+                    <a href="https://www.facebook.com/bodas.eventos11/?locale=es_LA" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cucutabodasyeventos/?hl=es" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/yl10zh" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2023 BODAS Y EVENTOS. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
+
 </html>

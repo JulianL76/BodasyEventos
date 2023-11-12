@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto;
     min-height: 100vh;
 }
 
@@ -80,6 +80,20 @@ button:hover {
 button.edit {
     background-color: #0b7709;
     color: #fff;
+}
+
+button.edit:hover {
+    color: #0b7709;
+    background-color: #fff;
+
+    box-shadow: 0 0 5px 0px;
+}
+
+button.delete:hover {
+    color: #A60505;
+    background-color: #fff;
+
+    box-shadow: 0 0 5px 0px;
 }
 
 button.delete {
@@ -228,6 +242,7 @@ footer {
     text-align: center;
     margin-top: 26px;
     width: 100%;
+    
 }
 
 .footer-grid {

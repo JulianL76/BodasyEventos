@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Unidad</title>
+</head>
+
+<body>
+
+    <h2>Crear Unidad</h2>
+
+    <form method="post" action="/inicio/Inventario/crear/nuevo">
+        <!-- Campos para la creación de la unidad -->
+        <label for="traje">Seleccione el Traje:</label>
+        <input type="text" id="searchTraje" placeholder="Buscar Traje">
+        <select id="traje" name="traje" required>
+            <option th:each="traje : ${trajes}" th:value="${traje.idTraje}" th:text="${traje.nombre}"></option>
+        </select>
+
+        <label for="talla">Seleccione la Talla:</label>
+        <input type="text" id="searchTalla" placeholder="Buscar talla">
+        <select id="talla" name="talla" required>
+            <option th:each="talla : ${tallas}" th:value="${talla.idTalla}" th:text="${talla.nombre}"></option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required>
+
+        <label for="precioAlquiler">Precio de Alquiler:</label>
+        <input type="number" id="precioAlquiler" name="precioAlquiler" required>
+
+        <button type="submit">Crear Unidad</button>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#searchTalla').on('input', function () {
+                    var searchTerm = $(this).val().toLowerCase();
+
+                    $('#talla option').each(function () {
+                        var textToMatch = $(this).text().toLowerCase();
+                        var match = textToMatch.includes(searchTerm);
+
+                        $(this).toggle(match);
+                    });
+                });
+
+                $('#searchTraje').on('input', function () {
+                    var searchTerm = $(this).val().toLowerCase();
+
+                    $('#traje option').each(function () {  // Cambiado de '#talla' a '#traje'
+                        var textToMatch = $(this).text().toLowerCase();
+                        var match = textToMatch.includes(searchTerm);
+
+                        $(this).toggle(match);
+                    });
+                });
+            });
+        </script>
+
+    </form>
+
+</body>
+
+</html>
