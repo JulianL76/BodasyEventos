@@ -64,6 +64,10 @@ button:hover {
     text-align: center;
 }
 
+.bottom{
+    bottom: 0;
+}
+
 
 /* Estilos responsivos */
 @media screen and (max-width: 600px) {
