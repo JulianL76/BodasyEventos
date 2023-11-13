@@ -78,7 +78,7 @@ public class RolController {
 		Set<Permiso> permisosNuevos = permisoRepository.getPermisosByIds(permisosActivados);
 		rol.setPermisos(permisosNuevos);
 		rolRepository.save(rol);
-		return "redirect:/inicio/configuracion";
+		return "redirect:/inicio/configuracion?exito1";
 	}
 
 	@GetMapping("/usuarios/{id}/toggle-activo")
