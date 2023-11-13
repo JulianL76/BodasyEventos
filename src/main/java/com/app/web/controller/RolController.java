@@ -91,7 +91,7 @@ public class RolController {
 		}
 		return "redirect:/inicio/configuracion";
 	}
-	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
 	    public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
 	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
 	        model.addAttribute("usuario", usuario);
