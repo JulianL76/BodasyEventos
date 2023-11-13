@@ -98,7 +98,7 @@ public class RolController {
 	        return "cambioContraseña";
 	    }
 
-	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
 	    public String cambiarContrasena(@PathVariable Integer id, @RequestParam String nuevaContrasena) {
 	        // Actualizar la contraseña del usuario en la base de datos
 	    	 Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
