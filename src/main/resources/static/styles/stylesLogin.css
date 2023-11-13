@@ -65,7 +65,7 @@ button {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
-    
+    font-size: 15px;
 }
 
 body::before {

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Formulario de Categoría</title>
+    <title>Agregar Categoría</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -42,17 +42,15 @@
         </div>
     </section>
 
-
         <h1>Añadir Categoria</h1>
-        <form method="post" th:object="${categoria}"
+        <form style="max-height: 70%;" method="post" th:object="${categoria}"
             th:action="${esEdicion} ? @{/inicio/categoria/editar/{id}(id=${categoria.idCategoria})} : @{/inicio/categoria/nuevo}">
             <label for="nombre">Ingrese Nombre:</label>
             <input type="text" th:field="*{nombre}" placeholder="Nombre de Categoria" />
 
             <div class="centered-button top-margin">
-                <a th:href="@{/inicio}">
-                    <button><i class="fa-solid fa-arrow-left"></i></button>
-                </a>
+                <button type="button" onclick="window.location.href='/inicio/categoria';"><i
+                        class="fa-solid fa-arrow-left"></i></button>
                 <button type="submit" class="boton">Guardar</button>
             </div>
         </form>
