@@ -30,8 +30,7 @@ label{
 }
 
 .boton-usuario{
-    margin: auto;
-    
+    margin: -50px 30% 20px 30%;
 }
 
 /*-----------------------------------*\
@@ -163,7 +162,7 @@ header {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Cambiado a min-height */
+  min-height: 90vh; /* Cambiado a min-height */
   box-sizing: border-box; /* Evitar que el padding afecte al tamaño total */
   justify-items: center;  
   margin: 0 15%;

@@ -2,51 +2,51 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/styles/stylePanel.css">
-  <title>Panel de Administración</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles/stylePanel.css">
+    <title>Panel de Administración</title>
 </head>
 
 <body>
-  <h1>Bienvenido al Panel de Administración</h1>
+    <h1>Bienvenido al Panel de Administración</h1>
 
-  <div class="button-container">
+    <div class="button-container">
 
-      <a th:if="${permisos.![nombre].contains('Configuración')}" href="/inicio/configuracion"><button>
-          <i class="fas fa-cogs"></i>Configuración</button>
-      </a>
+        <a th:if="${permisos.![nombre].contains('Configuración')}" href="/inicio/configuracion"><button>
+                <i class="fas fa-cogs"></i>Configuración</button>
+        </a>
 
-      <a th:if="${permisos.![nombre].contains('Registro Traje')}" href="/inicio/registroTraje"><button>
-          <i class="fas fa-tshirt"></i>Registro Traje</button>
-      </a>
+        <a th:if="${permisos.![nombre].contains('Registro Traje')}" href="/inicio/registroTraje"><button>
+                <i class="fas fa-tshirt"></i>Registro Traje</button>
+        </a>
 
-      <a th:if="${permisos.![nombre].contains('Control Categoria')}" href="/inicio/categoria"><button>
-          <i class="fas fa-tags"></i>Control Categoría</button>
-      </a>
+        <a th:if="${permisos.![nombre].contains('Control Categoria')}" href="/inicio/categoria"><button>
+                <i class="fas fa-tags"></i>Control Categoría</button>
+        </a>
 
-      <a th:if="${permisos.![nombre].contains('Control Tallas')}" href="/inicio/talla"><button>
-          <i class="fas fa-ruler"></i>Control Tallas</button>
-      </a>
+        <a th:if="${permisos.![nombre].contains('Control Tallas')}" href="/inicio/talla"><button>
+                <i class="fas fa-ruler"></i>Control Tallas</button>
+        </a>
 
-      <a href="/inicio/cliente"><button>
-        <i class="fas fa-user"></i>Control Clientes</button>
-    </a>
+        <a th:if="${permisos.![nombre].contains('Control de Clientes')}" href="/inicio/talla"><button>
+                <i class="fas fa-ruler"></i>Control de Clientes</button>
+        </a>
 
-    <a href="/inicio/Inventario"><button>
-        <i class="fas fa-industry"></i>Control Invenario</button>
-    </a>
+        <a href="/inicio/Inventario"><button>
+                <i class="fas fa-industry"></i>Control Invenario</button>
+        </a>
 
-    <a href="/inicio/alquiler"><button>
-        <i class="fas fa-folder"></i>Control de alquiler</button>
-    </a>
-    
-    <a href="/inicio/facturacion"><button>
-        <i class="fas fa-usd"></i>Proceso de facturación</button>
-  </div>
+        <a href="/inicio/alquiler"><button>
+                <i class="fas fa-folder"></i>Control de alquiler</button>
+        </a>
+
+        <a href="/inicio/facturacion"><button>
+                <i class="fas fa-usd"></i>Proceso de facturación</button>
+    </div>
 </body>
 
 </html>
