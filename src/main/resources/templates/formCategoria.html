@@ -43,7 +43,7 @@
     </section>
 
         <h1>Añadir Categoria</h1>
-        <form style="max-height: 70%;" method="post" th:object="${categoria}"
+        <form method="post" th:object="${categoria}"
             th:action="${esEdicion} ? @{/inicio/categoria/editar/{id}(id=${categoria.idCategoria})} : @{/inicio/categoria/nuevo}">
             <label for="nombre">Ingrese Nombre:</label>
             <input type="text" th:field="*{nombre}" placeholder="Nombre de Categoria" />
