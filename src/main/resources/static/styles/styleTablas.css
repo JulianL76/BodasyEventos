@@ -28,6 +28,7 @@ h1 {
     text-align: center;
     color: #000;
     margin-top: 20px;
+    font-size: 30px;
 }
 
 .tabla-container {
@@ -40,6 +41,11 @@ table {
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+}
+
+.atras{
+    width: 10%;
+    margin: 15px;
 }
 
 th,
@@ -73,6 +79,61 @@ button {
     font-size: 15px;
 }
 
+
+button.activar{
+    background-color: deepskyblue;
+    color: #fff;
+}
+
+.a-estilizado{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(0, 132, 209);
+    border-radius: 5px;
+    padding: 7.5px 10px;
+    transition: 0.3s;
+    
+}
+
+
+.actions-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.activo{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(114, 114, 114);
+    border-radius: 5px;
+    padding: 7.5px 10px;
+    transition: 0.3s;
+}
+
+.inactivo{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(114, 114, 114);
+    border-radius: 5px;
+    padding: 7.5px 10px;
+    transition: 0.3s;
+}
+
+.inactivo:hover{
+    background-color: #0b7709;
+    box-shadow: #0b7709 0 0 5px 0px;
+}
+
+.activo:hover{
+    background-color: rgb(189, 25, 39);
+    box-shadow: rgb(189, 25, 39) 0 0 5px 0px;
+}
+
 button:hover {
     background-color: #333;
 }
@@ -85,14 +146,23 @@ button.edit {
 button.edit:hover {
     color: #0b7709;
     background-color: #fff;
-
     box-shadow: 0 0 5px 0px;
 }
 
 button.delete:hover {
-    color: #A60505;
+    color: #973131;
     background-color: #fff;
+    box-shadow: 0 0 5px 0px;
+}
 
+button.change{
+    background-color: rgb(7, 163, 202);
+    color: #fff;
+}
+
+button.change:hover{
+    color: rgb(7, 163, 202);
+    background-color: #fff;
     box-shadow: 0 0 5px 0px;
 }
 

@@ -2,18 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-		integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<title>Listado de personas</title>
-	<link rel="stylesheet" href="/styles/styleTablas.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Listado de personas</title>
+    <link rel="stylesheet" href="/styles/styleTablas.css">
 </head>
 
 <body>
-
-	<section>
+    <section>
         <div class="contenedor-header">
             <h4 class="barra-negra">Bodas y Eventos, Sistema de Gestión</h4>
             <header>
@@ -44,44 +43,56 @@
         </div>
     </section>
 
-	<div th:if="${param.exito}">
-		<div class="alert alert-info" th:text="${param.exito}"></div>
-	</div>
-	<div th:if="${param.error}">
-		<div class="alert alert-danger" th:text="${param.error}"></div>
-	</div>
+    <div th:if="${param.exito}">
+        <div class="alert alert-info" th:text="${param.exito}"></div>
+    </div>
+    <div th:if="${param.error}">
+        <div class="alert alert-danger" th:text="${param.error}"></div>
+    </div>
 
-	<section class="tabla-container">
+    <section class="tabla-container">
+        <table>
+            <h1>Listado de Usuarios</h1>
 
-	
-	<table>
-		<thead>
-			<tr>
-				<th scope="col">Nombre</th>
-				<th scope="col">Correo Electrónico</th>
-				<th scope="col">Rol</th>
-				<th scope="col">Acciones</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="usuario : ${usuarios}">
-				<td th:text="${usuario.nombre}">Nombre</td>
-				<td th:text="${usuario.email}">Correo Electrónico</td>
-				<td th:text="${usuario.rol}">Rol</td>
-				<td>
-					<a th:unless="${usuario.id == idUsuarioActual || usuario.id == 2}"
-						th:href="@{'/usuarios/' + ${usuario.id} + '/toggle-activo'}" class="btn btn-warning"
-						th:text="${usuario.activo ? 'Inactivar' : 'Activar'}"> </a> <a
-						th:href="@{'/usuarios/' + ${usuario.id} + '/editar'}" class="btn btn-danger">Editar</a> <a
-						th:href="@{'/inicio/configuracion/usuarios/' + ${usuario.id} + '/cambiarcontraseña'}"
-						class="btn btn-danger">Cambiar Contraseña</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</section>
+            <div class="centered-button">
+                <button class="atras" type="button" onclick="window.location.href='/inicio/configuracion';"><i
+                        class="fa-solid fa-arrow-left"></i></button>
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo Electrónico</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuarios}">
+                    <td th:text="${usuario.nombre}">Nombre</td>
+                    <td th:text="${usuario.email}">Correo Electrónico</td>
+                    <td th:text="${usuario.rol}">Rol</td>
+                    <td>
+                        <div class="actions-container">
+                        <a th:unless="${usuario.id == idUsuarioActual || usuario.id == 2}"
+                            th:href="@{'/usuarios/' + ${usuario.id} + '/toggle-activo'}"
+                            th:text="${usuario.activo ? 'Desactivar' : 'Activar'}"
+                            th:classappend="${usuario.activo ? 'activo' : 'inactivo'}"></a>
+                        </a>
+             
+                        <a th:href="@{'/usuarios/' + ${usuario.id} + '/editar'}">
+                            <button class="edit"><i class="fas fa-edit"></i></button>
+                        </a>
 
-	<footer>
+                        <a th:href="@{'/inicio/configuracion/usuarios/' + ${usuario.id} + '/cambiarcontraseña'}">
+                            <button class="change"><i class="fa-solid fa-lock"></i></button></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
         <div class="footer-grid">
             <div class="footer-left">
                 <h2>BODAS & EVENTOS</h2>
