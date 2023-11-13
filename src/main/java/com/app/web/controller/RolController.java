@@ -95,7 +95,7 @@ public class RolController {
 	    public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
 	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
 	        model.addAttribute("usuario", usuario);
-	        return "cambioContraseña";
+	        return "cambioContrasena";
 	    }
 
 	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
