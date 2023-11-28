@@ -91,14 +91,14 @@ public class RolController {
 		}
 		return "redirect:/inicio/configuracion";
 	}
-	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
 	    public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
 	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
 	        model.addAttribute("usuario", usuario);
-	        return "cambioContraseña";
+	        return "cambiocontrasena";
 	    }
 
-	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontraseña")
+	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
 	    public String cambiarContrasena(@PathVariable Integer id, @RequestParam String nuevaContrasena) {
 	        // Actualizar la contraseña del usuario en la base de datos
 	    	 Usuario usuario = usuarioService.obtenerUsuarioPorId(id);

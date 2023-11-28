@@ -46,7 +46,7 @@
   </section>
   <h1>Cambio de Contraseña</h1>
   <form style="max-height: 70%;" 
-    th:action="@{'/inicio/configuracion/usuarios/' + ${usuario.id} + '/cambiarcontraseña'}" method="post" autocomplete="off">
+    th:action="@{'/inicio/configuracion/usuarios/' + ${usuario.id} + '/cambiarcontrasena'}" method="post" autocomplete="off">
     <label for="nombre" >Contraseña Nueva:</label>
     <input id="contraseña" type="password" name="nuevaContrasena"
       placeholder="Ingrese una nueva Contraseña" required>
