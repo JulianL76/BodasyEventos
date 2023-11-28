@@ -32,6 +32,12 @@ public class ClienteController {
 
     @PostMapping("/inicio/cliente/nuevo")
     public String saveCliente(@ModelAttribute Cliente cliente) {
+    	List<Cliente> clientes = clienteService.getAllClientes();
+    	for (Cliente clienteaux: clientes) {
+    		if(clienteaux.getCedula().equals(cliente.getCedula())) {
+    			 return "redirect:/inicio/cliente/nuevo?error=Esa cedula ya se encuentra registrada en otro cliente ";
+    		}
+    	}
         clienteService.saveCliente(cliente);
         return "redirect:/inicio/cliente";
     }
@@ -44,6 +50,12 @@ public class ClienteController {
     }
     @PostMapping("/inicio/cliente/editar/{cedula}")
     public String updateCliente(@ModelAttribute Cliente cliente) {
+    	List<Cliente> clientes = clienteService.getAllClientes();
+    	for (Cliente clienteaux: clientes) {
+    		if(clienteaux.getCedula().equals(cliente.getCedula())) {
+    			 return "redirect:/inicio/cliente/editar/{cedula}?error=Esa cedula ya se encuentra registrada en otro cliente ";
+    		}
+    	}
         clienteService.saveCliente(cliente);
         return "redirect:/clientes";
     }

@@ -15,6 +15,7 @@ public class Cliente {
     private String correo;
     private String direccion;
     private String telefono;
+   
     
     @OneToMany(mappedBy = "cliente")
     private List<Alquiler> alquileres;

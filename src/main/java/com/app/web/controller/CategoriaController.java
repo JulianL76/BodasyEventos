@@ -1,6 +1,8 @@
 package com.app.web.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +38,12 @@ public class CategoriaController {
 
     @PostMapping("/inicio/categoria/nuevo")
     public String guardarCategoria(@ModelAttribute Categoria categoria) {
+    	List<Categoria> categorias = categoriaRepository.findAll();
+    	for(Categoria cat : categorias) {
+    	if(cat.getNombre().equalsIgnoreCase(categoria.getNombre())) {
+    		 return "redirect:/inicio/categoria/nuevo?error=Ya existe una categoria con el nombre "+cat.getNombre();
+    	}
+    	}
         categoriaRepository.save(categoria);
         return "redirect:/inicio/categoria";
     }
@@ -53,7 +61,12 @@ public class CategoriaController {
         // Cargar el registro existente desde la base de datos
         Categoria categoriaExistente = categoriaRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("ID de categoría no válido"));
-
+        List<Categoria> categorias = categoriaRepository.findAll();
+    	for(Categoria cat : categorias) {
+    	if(cat.getNombre().equalsIgnoreCase(categoria.getNombre())) {
+    		 return "redirect:/inicio/categoria/nuevo?error=Ya existe una categoria con el nombre "+cat.getNombre();
+     	}
+    	}
         // Aplicar los cambios al registro existente
         categoriaExistente.setNombre(categoria.getNombre());
 
