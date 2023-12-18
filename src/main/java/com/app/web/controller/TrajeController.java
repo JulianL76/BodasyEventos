@@ -65,10 +65,9 @@ public class TrajeController {
         List<String> imagenes = new ArrayList<>();
         for (MultipartFile image : images) {
             if (!image.isEmpty()) {
-                // Realiza el procesamiento de cada imagen aquí
+
                 String uniqueFileName = uploadFileService.copy(image);
-                // Puedes guardar estos nombres de archivo en una lista en tu entidad Meme, por
-                // ejemplo
+
                 imagenes.add(uniqueFileName);
             }
         }
@@ -99,37 +98,10 @@ public class TrajeController {
         return "trajes/formulario";
     }
 
-    /*
-     * @PostMapping("/editar/{id}") public String actualizarTraje(@PathVariable
-     * Integer id, @ModelAttribute Traje traje, @RequestParam("file") MultipartFile
-     * file) { if (!file.isEmpty()) { try { byte[] imagenes = file.getBytes();
-     * traje.setImagenes(imagenes); } catch (IOException e) { e.printStackTrace(); }
-     * } trajeService.actualizarTraje(id, traje); return "redirect:/trajes"; }
-     */
-
     @GetMapping("/inicio/registroTraje/{id}/borrar")
     public String borrarTraje(@PathVariable Integer id) {
         trajeService.borrarTraje(id);
         return "redirect:/inicio/registroTraje";
     }
-
-    /*
-     * @GetMapping("/inicio/registroTraje/ver-imagen/{idTraje}")
-     * public String verImagen(@PathVariable Integer idTraje, Model model) {
-     * Traje traje = trajeService.obtenerTrajePorId(idTraje);
-     * if (traje != null && traje.getImagenes() != null) {
-     * // Convierte el arreglo de bytes en una representación en Base64
-     * String base64Image = Base64.getEncoder().encodeToString(traje.getImagenes());
-     * 
-     * // Agrega la imagen a la vista
-     * model.addAttribute("imagenBase64", base64Image);
-     * 
-     * return "verImagen"; // Crea una nueva plantilla para mostrar la imagen
-     * } else {
-     * // Manejo de errores si el traje o la imagen no existen
-     * return "error"; // Crea una vista de error
-     * }
-     * }
-     */
 
 }

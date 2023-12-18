@@ -100,6 +100,11 @@ button:hover {
   background-color: #555;
 }
 
+button:disabled {
+    background-color: #a8a1a1;
+  color: #333;
+}
+
 .centered-button {
   text-align: center;
   display: grid;
@@ -111,6 +116,7 @@ button:hover {
   width: 88%;
   font-size: 15px;
 }
+
 
 a {
   text-decoration: none;

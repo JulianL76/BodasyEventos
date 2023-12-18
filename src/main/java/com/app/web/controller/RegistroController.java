@@ -15,8 +15,8 @@ import com.app.web.repository.UsuarioRepository;
 
 @Controller
 public class RegistroController {
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping("/")
     public String paginaPrincipal() {
@@ -30,11 +30,11 @@ public class RegistroController {
 
     @GetMapping("/inicio")
     public String panelDeInicio(Model model) {
-    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		 String username = authentication.getName();
-	     Usuario usuario = usuarioRepository.findByEmail(username);
-    	Set<Permiso> permisos = usuario.getRol().getPermisos();
-		model.addAttribute("permisos", permisos);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        Usuario usuario = usuarioRepository.findByEmail(username);
+        Set<Permiso> permisos = usuario.getRol().getPermisos();
+        model.addAttribute("permisos", permisos);
         return "paneldeinicio";
     }
 
@@ -42,4 +42,5 @@ public class RegistroController {
     public String inactivo() {
         return "inactivo";
     }
+
 }

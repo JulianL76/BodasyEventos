@@ -66,6 +66,8 @@ button {
     padding: 10px;
     cursor: pointer;
     font-size: 15px;
+    font-family: 'Montserrat';
+    font-weight: 600;
 }
 
 body::before {
