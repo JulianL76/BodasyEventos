@@ -180,6 +180,7 @@ header {
 .producto-categoria {
     padding: 20px;
     border-radius: 10px;
+    width: 220px;
 }
 
 .producto-categoria:hover {
@@ -222,6 +223,10 @@ header {
     color: #000; 
     font-weight: 620;
     transition: background-color 0.9s;
+}
+
+.prod{
+    text-decoration: none;
 }
 
 /*-----------------------------------*\

@@ -1,0 +1,94 @@
+.contenedor-producto{
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 25px;
+    border-radius: 15px;
+}
+
+.titulo{
+    margin: 25px 0;
+}
+
+.buybutton{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 15px;
+    transition: 300ms;
+    text-decoration: none;
+    border: solid rgb(0, 0, 0) 2px;
+    overflow: none;
+    cursor: pointer;
+}
+
+.buybutton:hover{
+    background-color: white;
+    color:black;
+    transition: 300ms;
+}
+
+.buybutton:active{
+    transform: scale(0.95);
+}
+
+
+.cartbutton{
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: max-content;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 15px;
+    transition: 300ms;
+    text-decoration: none;
+    border: solid rgb(0, 0, 0) 2px;
+    overflow: none;
+    cursor: pointer;
+}
+
+.cartbutton:active{
+    transform: scale(0.95);
+}
+
+.botones-compras{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-tallas{
+    background-color: #cccccc;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #9a9797;
+    margin: 5px;
+    display: inline;
+    min-width: 50px;
+    font-size: 15px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.btn-tallas.selected{
+    background-color: #FFF;
+    border: 1.5px solid #000;
+    transform: scale(1.1);
+}
+
+.description{
+    min-height: 30%;
+}
+
+.imgen-producto{
+    border-radius: 15px;
+    border: 1px solid #CCCCCC;
+}

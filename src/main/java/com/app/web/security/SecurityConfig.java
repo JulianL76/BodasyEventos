@@ -31,6 +31,7 @@ public class SecurityConfig {
 		http.authorizeRequests()
 				.requestMatchers("/").permitAll()
 				.requestMatchers("/catalogo**").permitAll()
+				.requestMatchers("/catalogo/producto/**").permitAll()
 				.requestMatchers("/inicio/registroTraje/uploads/**").permitAll()
 				.requestMatchers("/registro**").permitAll()
 				.requestMatchers("/login**").permitAll()

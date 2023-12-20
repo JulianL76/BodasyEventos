@@ -20,6 +20,7 @@ public class Traje {
     private int idTraje;
     private String nombre;
     private int cantidadTotal;
+    private int precio;
     @ManyToOne
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
