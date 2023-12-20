@@ -55,6 +55,9 @@ a{
     text-decoration: none;
 }
 
+button:active{
+    transform: scale(0.95);
+}
 
 button:hover {
     background-color: #555;

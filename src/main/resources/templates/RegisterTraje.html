@@ -60,6 +60,12 @@
                     th:text="${categoria.nombre}"></option>
             </select>
         </div>
+
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="number" th:field="*{precio}" id="precio" placeholder="Precio" required />
+        </div>
+
         <div>
             <label for="file">Selecione Imagen :</label>
             <input class="archivo" type="file" id="images" name="images" onchange="loadFile(event)" multiple required />

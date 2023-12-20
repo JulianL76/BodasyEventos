@@ -79,6 +79,9 @@ button {
     font-size: 15px;
 }
 
+button:active{
+    transform: scale(0.95);
+}
 
 button.activar{
     background-color: deepskyblue;
@@ -95,7 +98,6 @@ button.activar{
     transition: 0.3s;
     
 }
-
 
 .actions-container{
     display: flex;
@@ -129,13 +131,21 @@ button.activar{
     box-shadow: #0b7709 0 0 5px 0px;
 }
 
+.inactivo:active{
+    transform: scale(0.95);
+}
+
 .activo:hover{
     background-color: rgb(189, 25, 39);
     box-shadow: rgb(189, 25, 39) 0 0 5px 0px;
 }
 
 button:hover {
-    background-color: #333;
+    background-color: #303030;
+}
+
+.activo:active{
+    transform: scale(0.95);
 }
 
 button.edit {

@@ -22,7 +22,7 @@
             <ul>
                 <li class="contenedor-item1">
                     <div class="logo">
-                        <a href="">Bodas & Eventos</a>
+                        <a href="/">Bodas & Eventos</a>
                         <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
                     </div>
                 </li>
@@ -61,7 +61,7 @@
                 Descripción detallada del producto. Puedes incluir aquí todas las características y detalles
                 importantes.
             </p>
-            <p>$99.99</p>
+            <h3 class="precio" style="text-decoration: underline;" th:text="'$' + ${#numbers.formatDecimal(traje.precio, 0, 'POINT', 2, 'COMMA')} + ' COP'"></h3>
             </div>
             <p><b>Tallaje:</b></p>
             <div style="margin-bottom: 35px;">

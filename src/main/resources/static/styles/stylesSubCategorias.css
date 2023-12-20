@@ -77,6 +77,10 @@ button {
     text-overflow: ellipsis;
 }
 
+button:active{
+    transform: scale(0.95);
+}
+
 button.edit {
     background-color: #4CAF50;
     color: #fff;
