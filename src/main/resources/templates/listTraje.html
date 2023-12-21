@@ -49,6 +49,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Cantidad</th>
+            <th>Precio</th>
             <th>Categoría</th>
             <th>Imágenes</th>
             <th>Acciones</th>
@@ -57,6 +58,7 @@
             <td th:text="${traje.idTraje}"></td>
             <td th:text="${traje.nombre}"></td>
             <td th:text="${traje.cantidadTotal}"></td>
+            <td th:text="${traje.precio}"></td>
             <td th:text="${traje.categoria.nombre}"></td>
             <td>
                 <div th:each="imagen : ${traje.imagenes}">

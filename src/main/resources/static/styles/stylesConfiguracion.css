@@ -236,6 +236,11 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 15px;
+    transition: 150ms;
+}
+
+button:active{
+    transform: scale(0.95);
 }
 
 button:hover {

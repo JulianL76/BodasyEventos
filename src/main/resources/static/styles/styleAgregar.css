@@ -87,8 +87,8 @@ text-align: center;
 }
 
 button {
-  padding: 15px;
-  background-color: #333;
+  padding: 10px;
+  background-color: #000000;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -96,8 +96,17 @@ button {
   transition: background-color 0.3s;
 }
 
+button:active{
+  transform: scale(0.95);
+}
+
 button:hover {
-  background-color: #555;
+  background-color: #303030;
+}
+
+button:disabled {
+    background-color: #a8a1a1;
+  color: #333;
 }
 
 .centered-button {
@@ -111,6 +120,7 @@ button:hover {
   width: 88%;
   font-size: 15px;
 }
+
 
 a {
   text-decoration: none;

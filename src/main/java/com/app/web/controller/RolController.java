@@ -82,70 +82,72 @@ public class RolController {
 	}
 
 	@GetMapping("/usuarios/{id}/toggle-activo")
-	public String toggleActivo(@PathVariable Integer id) {
+	public String toggleActivo(@PathVariable Integer id, Model model) {
 		Optional<Usuario> usuario = usuarioRepository.findById(id);
 		Usuario obtenerUsuario = usuario.get();
 		if (obtenerUsuario != null) {
 			obtenerUsuario.setActivo(!obtenerUsuario.isActivo());
 			usuarioService.guardar(obtenerUsuario);
 		}
-		return "redirect:/inicio/configuracion";
+		listUsuarios(model);
+		return "listUsuarios";
 	}
-	 @GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
-	    public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
-	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
-	        model.addAttribute("usuario", usuario);
-	        return "cambiocontrasena";
-	    }
 
-	    @PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
-	    public String cambiarContrasena(@PathVariable Integer id, @RequestParam String nuevaContrasena) {
-	        // Actualizar la contraseña del usuario en la base de datos
-	    	 Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
-	    	 usuario.setPassword(nuevaContrasena);
-	    	 usuarioService.guardar(usuario);
-	        return "redirect:/inicio/configuracion/usuarios"; // Redirige a la lista de usuarios u otra página
-	    }
-	    
-	    @GetMapping("/inicio/configuracion/usuarios")
-		public String listUsuarios(Model model) {
-	    	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-			 String username = authentication.getName();
-		     Usuario usuario = usuarioRepository.findByEmail(username);
-		     Integer idUsuarioActual = usuario.getId();
-	    	 // Obtener el nombre de usuario del objeto Authentication
-	         // Supongamos que el nombre de usuario es la identificación única para tu caso
-	   
-	    	List<Usuario> usuarios = usuarioService.listarUsuarios();
-			model.addAttribute("usuarios", usuarios);
-			model.addAttribute("idUsuarioActual", idUsuarioActual);
-			return "listUsuarios";
+	@GetMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
+	public String mostrarFormularioCambioContrasena(@PathVariable int id, Model model) {
+		Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+		model.addAttribute("usuario", usuario);
+		return "cambiocontrasena";
+	}
+
+	@PostMapping("inicio/configuracion/usuarios/{id}/cambiarcontrasena")
+	public String cambiarContrasena(@PathVariable Integer id, @RequestParam String nuevaContrasena) {
+		// Actualizar la contraseña del usuario en la base de datos
+		Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+		usuario.setPassword(nuevaContrasena);
+		usuarioService.guardar(usuario);
+		return "redirect:/inicio/configuracion/usuarios"; // Redirige a la lista de usuarios u otra página
+	}
+
+	@GetMapping("/inicio/configuracion/usuarios")
+	public String listUsuarios(Model model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String username = authentication.getName();
+		Usuario usuario = usuarioRepository.findByEmail(username);
+		Integer idUsuarioActual = usuario.getId();
+		// Obtener el nombre de usuario del objeto Authentication
+		// Supongamos que el nombre de usuario es la identificación única para tu caso
+
+		List<Usuario> usuarios = usuarioService.listarUsuarios();
+		model.addAttribute("usuarios", usuarios);
+		model.addAttribute("idUsuarioActual", idUsuarioActual);
+		return "listUsuarios";
+	}
+
+	@GetMapping("/usuarios/{id}/editar")
+	public String mostrarFormularioDeEdicion(@PathVariable Integer id, Model model) {
+		Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
+		if (usuario != null) {
+			model.addAttribute("usuario", usuario);
+			List<Rol> roles = rolRepository.findAll();
+			model.addAttribute("roles", roles);
+			return "editar";
+		} else {
+			return "redirect:/inicio/configuracion/usuarios?error";
 		}
-	    
-	    @GetMapping("/usuarios/{id}/editar")
-	    public String mostrarFormularioDeEdicion(@PathVariable Integer id, Model model) {
-	        Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
-	        if (usuario != null) {
-	            model.addAttribute("usuario", usuario);
-	            List<Rol> roles = rolRepository.findAll();
-	    		model.addAttribute("roles", roles);
-	            return "editar"; 
-	        } else {
-	            return "redirect:/inicio/configuracion/usuarios?error";
-	        }
-	    }
-	    
-	    @PostMapping("/usuarios/{id}/editar")
-	    public String editarCuentaDePersona(@ModelAttribute("usuario") Usuario usuario) {
-	        Usuario usuarioExistente = usuarioService.obtenerUsuarioPorId(usuario.getId());
-	        if (usuarioExistente != null) {
-	            usuarioExistente.setNombre(usuario.getNombre());
-	            usuarioExistente.setEmail(usuario.getEmail());
-	            usuarioExistente.setRol(usuario.getRol());
-	            usuarioService.guardar(usuarioExistente);
-	            return "redirect:/inicio/configuracion/usuarios?exito=Se han guardado los cambios con exito";
-	        } else {
-	            return "redirect:/inicio/configuracion/usuarios?error=No se han podido guardar los cambios";
-	        }
-	    }
+	}
+
+	@PostMapping("/usuarios/{id}/editar")
+	public String editarCuentaDePersona(@ModelAttribute("usuario") Usuario usuario) {
+		Usuario usuarioExistente = usuarioService.obtenerUsuarioPorId(usuario.getId());
+		if (usuarioExistente != null) {
+			usuarioExistente.setNombre(usuario.getNombre());
+			usuarioExistente.setEmail(usuario.getEmail());
+			usuarioExistente.setRol(usuario.getRol());
+			usuarioService.guardar(usuarioExistente);
+			return "redirect:/inicio/configuracion/usuarios?exito=Se han guardado los cambios con exito";
+		} else {
+			return "redirect:/inicio/configuracion/usuarios?error=No se han podido guardar los cambios";
+		}
+	}
 }

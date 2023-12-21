@@ -11,18 +11,18 @@
     <link rel="icon" href="/img/banner-2.jpg" type="image/x-icon">
     <link rel="shortcut icon" href="/img/banner-2.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/stylesCatalogo.css">
+    <link rel="stylesheet" href="/styles/stylesProducto.css">
 </head>
 
 <body>
-    <!--HEADER -->
     <div class="contenedor-header">
         <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
         <header>
             <ul>
                 <li class="contenedor-item1">
                     <div class="logo">
-                        <a href="">Bodas & Eventos</a>
+                        <a href="/">Bodas & Eventos</a>
                         <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
                     </div>
                 </li>
@@ -31,7 +31,6 @@
                 <nav id="nav">
                     <ul class="menu" id="menu">
                         <li><a href="/">INICIO</a></li>
-                        <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
                         <li><a th:href="@{/catalogo}">CATÁLOGO</a></li>
                     </ul>
                 </nav>
@@ -44,73 +43,40 @@
             <ul class="iconos contenedor-item3">
                 <!-- <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
                 <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
-                <!-- <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+                <li><a href="#sobremi"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
-
         </header>
     </div>
-    <!-- BANNER -->
-   <div class="banner">
-        <div class="container">
-            <div class="slider-container has-scrollbar">
-                <div class="slider-item">
-                    <img src="/img/Matrimonio.jpg" alt="women's latest fashion sale" class="banner-img">
-                    <div class="banner-content">
-                        <p class="banner-subtitle">Novio y Novia</p>
-                        <h2 class="banner-title">Trajes para toda ocasión.</h2>
-                        <!-- <a href="#" class="banner-btn">Agenda tu cita</a> -->
-                    </div>
-                </div>
-              
-            </div>
+
+    <div class="contenedor-producto">
+
+        <div th:each="imagen : ${traje.imagenes}">
+            <img class="imgen-producto" th:src="@{'/inicio/registroTraje/uploads/' + ${imagen}}" width="400" height="400" />
         </div>
-    </div>
-    <!-- DIVISOR -->
-    <div id="sobreNosotros" class="title-section">
-        <div class="title-text">Sobre nosotros</div>
-        <div class="divider"></div>
+
+        <div>
+            <h2 class="titulo" th:text="${traje.nombre}"></h2>
+            <div class="description">
+            <p>
+                Descripción detallada del producto. Puedes incluir aquí todas las características y detalles
+                importantes.
+            </p>
+            <h3 class="precio" style="text-decoration: underline;" th:text="'$' + ${#numbers.formatDecimal(traje.precio, 0, 'POINT', 2, 'COMMA')} + ' COP'"></h3>
+            </div>
+            <p><b>Tallaje:</b></p>
+            <div style="margin-bottom: 35px;">
+                <button class="btn-tallas" th:each="talla : ${tallas}" th:text="${talla.nombre}" onclick="seleccionarTalla(this)"></button>
+            </div>
+            <div class="botones-compras">
+                <button class="buybutton">Comprar ahora</button>
+                <button class="cartbutton">Añadir al carrito</button>
+            </div>
+            <br>
+            
+        </div>
     </div>
 
-    <section class="cont-slider-novias" >
-        <center>
-            <div class="columnas">
-                <span class="linea"></span>
-                <p>“Entendemos que cada ocasión especial merece un toque de distinción y sofisticación. Somos tu destino
-                    de
-                    confianza para encontrar el traje perfecto que te haga destacar en cualquier evento. Ya sea una
-                    boda,
-                    una fiesta de gala, una graduación o una reunión de negocios, en nuestra tienda encontrarás una
-                    amplia
-                    gama de opciones para alquilar y comprar trajes de alta calidad para hombres y mujeres.”</p>
-                <span class="linea"></span>
-            </div>
-        </center>
-        <div id="slidernovia" class="slidernovia">
-            <img src="/img/novia1.png" alt="Imagen 2">
-            <img src="/img/novia2.png" alt="Imagen 2">
-            <img src="/img/novia3.png" alt="Imagen 2">
-            <img src="/img/novia4.png" alt="Imagen 2">
-            <img src="/img/novia5.png" alt="Imagen 2">
-            <img src="/img/novia6.png" alt="Imagen 2">
-        </div>
-    </section>
-    <center>
-        <section class="map-container">
-            <h1 class="map-title">¿Donde nos ubicamos?</h1>
-            <div class="map">
-                <div class="map-info">
-                    <p>Calle 11 No. 1-63 Centro - Cúcuta<br>
-                        Telefono: 6075831699<br>
-                        Whatsapp: 317-6351588</p>
-                    <br>
-                    <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu" target="_blank" class="map-btn">Como llegar</a>
-                </div>
-                <div class="ubicacion">
-                    <img src="/img/map.png" alt="Mapa">
-                </div>
-            </div>
-        </section>
-    </center>
+
     <footer>
         <div class="footer-grid">
             <div class="footer-left">
@@ -137,7 +103,18 @@
         </div>
         <p class="copyright">© 2023 BODAS Y EVENTOS. Todos los derechos reservados.</p>
     </footer>
-    <script src="/js/script.js"></script>
+    <script>
+        function seleccionarTalla(boton) {
+          // Desmarcar todos los botones
+          var botones = document.querySelectorAll('.btn-tallas');
+          botones.forEach(function (btn) {
+            btn.classList.remove('selected');
+          });
+    
+          // Marcar el botón seleccionado
+          boton.classList.add('selected');
+        }
+      </script>
 </body>
 
 </html>
