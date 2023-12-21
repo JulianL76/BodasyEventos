@@ -11,10 +11,11 @@
     <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/styles/styleTablas.css">
     <link rel="stylesheet" href="/styles/stylesCatalogo.css">
 </head>
 
-<body>
+<body onload="mostrarDatos()">
     <!--HEADER -->
     <div class="contenedor-header">
         <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
@@ -30,9 +31,7 @@
             <ul class="contenedor-item2">
                 <nav id="nav">
                     <ul class="menu" id="menu">
-                        <li><a href="/">INICIO</a></li>
-                        <!-- <li><a href="">CATÁLOGO</a></li> -->
-                        <!-- <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li> -->
+                        <li><a href="/">INICIO</a></li>                  
                     </ul>
                 </nav>
                 <ul>
@@ -42,32 +41,29 @@
                 </ul>
             </ul>
             <ul class="iconos contenedor-item3">
-                <!-- <li><a href="#sobremi"><i class="fa-solid fa-magnifying-glass"></i></a></li> -->
-                <li><a href="/login"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="/registroC"><i class="fa-regular fa-user"></i></a></li>
                 <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </header>
     </div>
-    <section th:each="categoria : ${categorias}">
-        <div class="title-section">
-            <p class="title-text" th:text="${categoria.nombre}"></p>
-            <div class="divider"></div>
-        </div>
-        <div class="container">
-            <div th:each="traje : ${categoria.trajes}" class="producto-categoria">
-                <a class="prod" th:href="@{catalogo/producto/{id}(id=${traje.idTraje})}">
-                    <div th:each="imagen : ${traje.imagenes}">
-                        <img th:src="@{'/inicio/registroTraje/uploads/' + ${imagen}}" width="100" height="100" />
-                    </div>
-                    <h3 th:text="${traje.nombre}"></h3>
-                    <p th:text="${traje.categoria.nombre}"></p>
-                </a>
-                <p style="text-decoration: underline;" th:text="'$' + ${#numbers.formatDecimal(traje.precio, 0, 'POINT', 2, 'COMMA')} + ' COP'"></p>
 
-                <button>Agregar al carrito</button>
-            </div>
-        </div>
-    </section>
+    <div class="tabla-container" >
+        <h1>Carrito</h1>
+        <div id="divResultados" class="container-fluid"></div>
+        <div id="table"> 
+        <table>
+            <tr>
+                <th>Id producto</th>
+                <th>Talla</th>
+                <th>Precio</th>
+            </tr>
+            <tbody id="tableBody">
+            </tbody>     
+        </table>
+    </div>
+</div>
+        </section>
+
     <footer>
         <div class="footer-grid">
             <div class="footer-left">
@@ -94,6 +90,6 @@
         </div>
         <p class="copyright">© 2023 BODAS Y EVENTOS. Todos los derechos reservados.</p>
     </footer>
+    <script src="/js/script.js"></script>
 </body>
-
 </html>

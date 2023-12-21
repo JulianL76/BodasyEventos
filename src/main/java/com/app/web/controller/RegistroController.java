@@ -27,6 +27,17 @@ public class RegistroController {
     public String iniciarSesion() {
         return "login";
     }
+    
+    @GetMapping("/carrito")
+    public String carrito() {
+        return "carrito";
+    }
+
+    @GetMapping("/registroC")
+    public String registroC() {
+        return "registrarUsuario";
+    }
+    
 
     @GetMapping("/inicio")
     public String panelDeInicio(Model model) {

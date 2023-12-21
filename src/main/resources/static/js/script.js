@@ -127,4 +127,65 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+/// mostrar datos en lo del carrito con el localstores
 
+function mostrarDatos(){ 
+    var respuesta = "";  
+    var totalPagar = 0;  
+    if (localStorage.length>0) {
+        for(let i=1; i<= localStorage.length; i++){             
+            let txt = localStorage.getItem("carrito" + i);            
+            if (txt === undefined ){
+                console.log("Error: " + i);
+              
+            }else {
+                const carrito = JSON.parse(txt);  
+                console.log(txt);
+                if (carrito!=null){
+                    respuesta += 
+                      "<tr>" + "<td>" + carrito.id_producto+ "</td>" +
+                                "<td>" + carrito.talla + "</td>" +
+                                "<td>" + carrito.precio + "<td>"+
+                                "</tr>";
+                                totalPagar += carrito.precio;
+                }
+
+                respuesta +=  "<tr>"+
+               " <td colspan='2'style='text-align: right;'>Total a pagar:</td>"+
+                +"<td>"+"$"+totalPagar+"</td>";
+              "</tr>";    
+            }
+        }
+
+    } else {
+        respuesta += "<tr>" + "<td colspan='4'> Carrito vacio </td>" +
+                     "</tr>"
+    }
+
+    document.getElementById("tableBody").innerHTML = respuesta;
+
+}
+
+//Enviar Correo 
+function enviarCorreo(){
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Registrando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_cg5aby9';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Registrar';
+      alert('Bienvenido!');
+    }, (err) => {
+      btn.value = 'Registrar';
+      alert(JSON.stringify(err));
+    });
+});
+}
