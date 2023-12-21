@@ -61,10 +61,11 @@
                     </div>
                     <h3 th:text="${traje.nombre}"></h3>
                     <p th:text="${traje.categoria.nombre}"></p>
-                </a>
+               
                 <p style="text-decoration: underline;" th:text="'$' + ${#numbers.formatDecimal(traje.precio, 0, 'POINT', 2, 'COMMA')} + ' COP'"></p>
 
-                <button>Agregar al carrito</button>
+                <button>Detalles</button>
+                </a>
             </div>
         </div>
     </section>
