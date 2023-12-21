@@ -127,4 +127,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+/// mostrar datos en lo del carrito con el localstores
+
+function mostrarDatos(){ 
+    var respuesta = "";  
+    var totalPagar = 0;  
+    if (localStorage.length>0) {
+        for(let i=1; i<= localStorage.length; i++){             
+            let txt = localStorage.getItem("carrito" + i);            
+            if (txt === undefined ){
+                console.log("Error: " + i);
+              
+            }else {
+                const carrito = JSON.parse(txt);  
+                console.log(txt);
+                if (carrito!=null){
+                    respuesta += 
+                      "<tr>" + "<td>" + carrito.id_producto+ "</td>" +
+                                "<td>" + carrito.talla + "</td>" +
+                                "<td>" + carrito.precio + "<td>"+
+                                "</tr>";
+                                totalPagar += carrito.precio;
+                }
+
+                respuesta +=  "<tr>"+
+               " <td colspan='2'style='text-align: right;'>Total a pagar:</td>"+
+                +"<td>"+"$"+totalPagar+"</td>";
+              "</tr>";    
+            }
+        }
+
+    } else {
+        respuesta += "<tr>" + "<td colspan='4'> Carrito vacio </td>" +
+                     "</tr>"
+    }
+
+    document.getElementById("tableBody").innerHTML = respuesta;
+
+}
+
+
 
