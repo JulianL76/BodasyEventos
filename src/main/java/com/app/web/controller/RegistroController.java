@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.app.web.entities.Permiso;
 import com.app.web.entities.Usuario;
 import com.app.web.repository.UsuarioRepository;
+import com.app.web.repository.ClienteRepository;
 
 @Controller
 public class RegistroController {
     @Autowired
     private UsuarioRepository usuarioRepository;
+    private ClienteRepository clienteRepository;
 
     @GetMapping("/")
     public String paginaPrincipal() {
@@ -33,8 +35,15 @@ public class RegistroController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         Usuario usuario = usuarioRepository.findByEmail(username);
-        Set<Permiso> permisos = usuario.getRol().getPermisos();
-        model.addAttribute("permisos", permisos);
+        if( usuario != null){
+            Set<Permiso> permisos = usuario.getRol().getPermisos();
+		    model.addAttribute("permisos", permisos);
+        }
+        else{
+            if(clienteRepository.findByEmail(username) != null){
+                return "paneldeinicio";
+            }
+        }
         return "paneldeinicio";
     }
 
