@@ -13,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.app.web.entities.Usuario;
+import com.app.web.repository.ClienteRepository;
 import com.app.web.repository.UsuarioRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import jakarta.servlet.http.HttpSession;
 public class SecurityConfig {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	private ClienteRepository clienteRepository;
 
 	@Autowired
 	@SuppressWarnings({ "deprecation", "removal" })
@@ -35,12 +37,13 @@ public class SecurityConfig {
 				.requestMatchers("/inicio/registroTraje/uploads/**").permitAll()
 				.requestMatchers("/registro**").permitAll()
 				.requestMatchers("/login**").permitAll()
+				.requestMatchers("/GUIregistroCliente**").permitAll()
 				.requestMatchers("/img/**").permitAll()
 				.requestMatchers("/css/**").permitAll()
 				.requestMatchers("/js/**").permitAll()
 				.requestMatchers("/styles/**").permitAll()
 				.requestMatchers("/admin/**").hasAuthority("ADMIN")
-				.requestMatchers("/cliente/**").hasAuthority("CLIENTE")
+				.requestMatchers("/cliente/**").permitAll()
 				.requestMatchers("/entrenador/**").hasAuthority("ENTRENADOR")
 				.anyRequest().authenticated()
 				.and()
@@ -62,7 +65,7 @@ public class SecurityConfig {
 	}
 
 	private void redirectAfterLogin(Authentication authentication, HttpServletResponse response,
-			HttpServletRequest request) throws IOException {
+		HttpServletRequest request) throws IOException {
 		String username = authentication.getName();
 		Usuario usuario = usuarioRepository.findByEmail(username);
 		if (usuario != null) {
