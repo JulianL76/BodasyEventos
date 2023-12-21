@@ -33,6 +33,12 @@ public class RegistroController {
         return "carrito";
     }
 
+    @GetMapping("/registroC")
+    public String registroC() {
+        return "registrarUsuario";
+    }
+    
+
     @GetMapping("/inicio")
     public String panelDeInicio(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

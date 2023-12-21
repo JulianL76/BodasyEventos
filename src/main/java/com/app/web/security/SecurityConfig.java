@@ -36,6 +36,7 @@ public class SecurityConfig {
 				.requestMatchers("/registro**").permitAll()
 				.requestMatchers("/login**").permitAll()
 				.requestMatchers("/carrito**").permitAll()
+				.requestMatchers("/registroC**").permitAll()
 				.requestMatchers("/img/**").permitAll()
 				.requestMatchers("/css/**").permitAll()
 				.requestMatchers("/js/**").permitAll()
