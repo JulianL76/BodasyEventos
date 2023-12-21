@@ -166,26 +166,26 @@ function mostrarDatos(){
 
 }
 
-//Enviar Correo 
-function enviarCorreo(){
-const btn = document.getElementById('button');
+      //Enviar Correo 
+      function enviarCorreo() {
+        const btn = document.getElementById('button');
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+        document.getElementById('form')
+          .addEventListener('submit', function (event) {
+            event.preventDefault();
 
-   btn.value = 'Registrando...';
+            btn.value = 'Registrando...';
 
-   const serviceID = 'default_service';
-   const templateID = 'template_cg5aby9';
+            const serviceID = 'default_service';
+            const templateID = 'template_cg5aby9';
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Registrar';
-      alert('Bienvenido!');
-    }, (err) => {
-      btn.value = 'Registrar';
-      alert(JSON.stringify(err));
-    });
-});
-}
+            emailjs.sendForm(serviceID, templateID, this)
+              .then(() => {
+                btn.value = 'Registrar';
+                alert('Bienvenido!');
+              }, (err) => {
+                btn.value = 'Registrar';
+                alert(JSON.stringify(err));
+              });
+          });
+      }
