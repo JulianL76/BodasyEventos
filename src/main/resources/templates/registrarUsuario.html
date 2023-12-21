@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
-    <title>Registrar</title>
-    <link rel="stylesheet" href="/styles/stylesLogin.css" >
+  <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+  <title>Registrar</title>
+  <link rel="stylesheet" href="/styles/stylesLogin.css">
 </head>
+
 <body>
-    <div class="login-container">
-        <h1>Registrar</h1>
+  <div class="login-container">
+    <h1>Registrar</h1>
 
-        <form id="form">   
-            <input id="cedula" type="text" name="cedula" placeholder="Cedula" required>
-            <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
-            <input id="apellido" type="text" name="cedula" placeholder="Apellido" required>
-            <input id="email" type="email" name="email" placeholder="Email" required>
-            <input id="direccion" type="text" name="direccion" placeholder="Direccion" required>           
-            <input type="submit" id="button" value="Registrar" onclick="enviarCorreo()">
+    <form th:object="${cliente}" th:action="@{/registrarse}" method="post">
+      <input style="margin: 0;" type="text" th:field="*{cedula}" th:readonly="${cliente.cedula != null}"
+        placeholder="Ingrese cedula" required /><br />
+      <input style="margin: 0;" type="text" th:field="*{nombre}" placeholder="Ingrese Nombre" required /><br />
+      <input style="margin: 0;" type="text" th:field="*{apellido}" placeholder="Ingrese Apellidos" required /><br />
+      <input style="margin: 0;" type="email" th:field="*{correo}" placeholder="Ingrese Correo Electronico"
+        required /><br />
+      <input style="margin: 0;" type="text" th:field="*{direccion}" placeholder="Ingrese Dirección" required /><br />
+      <input style="margin: 0;" type="text" th:field="*{telefono}" placeholder="Ingrese Telefono" required /><br />
+      <div th:if=${param.exito}>
+        <div class="check alert-info">Se ha registrado exitosamente a
+          la aplicación</div>
+      </div>
+      <div th:if=${param.error}>
+        <div class="alert alert-info">La cedula ya se encuentra en Uso.</div>
+      </div>
+      <div class="centered-button">
+        <button type="button" onclick="window.location.href='/login';"><i class="fa-solid fa-arrow-left"></i></button>
+        <button type="submit" id="button" onclick="enviarCorreo()">Registrar</button>
+      </div>
+    </form>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-          </form>       
+    <script type="text/javascript">
+      emailjs.init('yThXdY_xAkH11TNp0')
+    </script>
+    <script src="/js/script.js"></script>
 
-          <script type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        
-        <script type="text/javascript">
-          emailjs.init('yThXdY_xAkH11TNp0')
-        </script>
-        <script src="/js/script.js"></script>
-    </div>
+  </div>
 </body>
+
 </html>

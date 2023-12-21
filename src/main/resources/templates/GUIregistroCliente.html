@@ -51,15 +51,15 @@
     <form th:object="${cliente}" th:action="@{/GUIregistroCliente}" method="post">
         Cédula: <input type="text" th:field="*{cedula}" th:readonly="${cliente.cedula != null}"
             placeholder="Ingrese cedula" required /><br />
-        Nombre: <input type="text" th:field="*{nombre}" placeholder="Ingrese Nombre" required /><br />
-        Apellido: <input type="text" th:field="*{apellido}" placeholder="Ingrese Apellidos" required /><br />
-        Correo: <input type="email" th:field="*{correo}" placeholder="Ingrese Correo Electronico" required /><br />
-        Dirección: <input type="text" th:field="*{direccion}" placeholder="Ingrese Dirección" required /><br />
-        Teléfono: <input type="text" th:field="*{telefono}" placeholder="Ingrese Telefono" required /><br />
+        <input type="text" th:field="*{nombre}" placeholder="Ingrese Nombre" required /><br />
+        <input type="text" th:field="*{apellido}" placeholder="Ingrese Apellidos" required /><br />
+        <input type="email" th:field="*{correo}" placeholder="Ingrese Correo Electronico" required /><br />
+        <input type="text" th:field="*{direccion}" placeholder="Ingrese Dirección" required /><br />
+        <input type="text" th:field="*{telefono}" placeholder="Ingrese Telefono" required /><br />
         <div class="centered-button">
             <button type="button" onclick="window.location.href='/inicio/cliente';"><i
                     class="fa-solid fa-arrow-left"></i></button>
-            <button type="submit" class="boton">Guardar</button>
+            <input type="submit" id="button" value="Registrar" onclick="enviarCorreo()">
         </div>
     </form>
     <footer>

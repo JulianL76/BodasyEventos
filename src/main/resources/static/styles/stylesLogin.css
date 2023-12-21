@@ -68,6 +68,11 @@ button {
     font-size: 15px;
     font-family: 'Montserrat';
     font-weight: 600;
+    transition: 150ms;
+}
+
+button:active{
+    transform: scale(0.95);
 }
 
 body::before {
@@ -82,4 +87,14 @@ body::before {
     height: 100%;
     z-index: -1;
     filter: grayscale(90%); /* Aplicar escala de grises al 90% */
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #c00000;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-family: "Work Sans";
 }

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.app.web.entities.Permiso;
 
@@ -39,34 +40,28 @@ public class RegistroController {
     public String iniciarSesion() {
         return "login";
     }
-    
+
     @GetMapping("/carrito")
     public String carrito() {
         return "carrito";
     }
 
-    @GetMapping("/registroC")
-    public String registroC() {
-        return "registrarUsuario";
-    }
-    
-
-    @GetMapping("/GUIregistroCliente")
+    @GetMapping("/registrarse")
     public String registrarCliente(Model model) {
         model.addAttribute("cliente", new Cliente());
-        return "GUIregistroCliente";
+        return "registrarUsuario";
     }
 
-    @PostMapping("/GUIregistroCliente")
+    @PostMapping("/registrarse")
     public String guardarCliente(@ModelAttribute Cliente cliente) {
         List<Cliente> clientes = clienteService.getAllClientes();
         for (Cliente clienteaux : clientes) {
             if (clienteaux.getCedula().equals(cliente.getCedula())) {
-                return "redirect:/inicio/cliente/nuevo?error=Esa cedula ya se encuentra registrada en otro cliente ";
+                return "redirect:/registrarse?error";
             }
         }
         clienteService.saveCliente(cliente);
-        return "ListCliente";
+        return "redirect:/registrarse?exito";
     }
 
     @GetMapping("/inicio")

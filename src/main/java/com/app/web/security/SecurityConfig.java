@@ -39,7 +39,7 @@ public class SecurityConfig {
 				.requestMatchers("/login**").permitAll()
 				.requestMatchers("/GUIregistroCliente**").permitAll()
 				.requestMatchers("/carrito**").permitAll()
-				.requestMatchers("/registroC**").permitAll()
+				.requestMatchers("/registrarse/**").permitAll()
 				.requestMatchers("/img/**").permitAll()
 				.requestMatchers("/css/**").permitAll()
 				.requestMatchers("/js/**").permitAll()
