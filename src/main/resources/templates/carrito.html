@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bodas & Eventos</title>
+    <link rel="icon" href="/img/banner-2.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/banner-2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/styles/styleTablas.css">
+    <link rel="stylesheet" href="/styles/stylesCatalogo.css">
 </head>
-<body>
-    
+
+<body onload="mostrarDatos()">
+    <!--HEADER -->
+    <div class="contenedor-header">
+        <h4 class="barra-negra">Alquiler y Venta de Trajes</h4>
+        <header>
+            <ul>
+                <li class="contenedor-item1">
+                    <div class="logo">
+                        <a href="/">Bodas & Eventos</a>
+                        <h6>LUCE ESPECTACULAR CON NOSOTROS</h6>
+                    </div>
+                </li>
+            </ul>
+            <ul class="contenedor-item2">
+                <nav id="nav">
+                    <ul class="menu" id="menu">
+                        <li><a href="/">INICIO</a></li>                  
+                    </ul>
+                </nav>
+                <ul>
+                    <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </ul>
+            </ul>
+            <ul class="iconos contenedor-item3">
+                <li><a href="/registroC"><i class="fa-regular fa-user"></i></a></li>
+                <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="tabla-container" >
+        <h1>Carrito</h1>
+        <div id="divResultados" class="container-fluid"></div>
+        <div id="table"> 
+        <table>
+            <tr>
+                <th>Id producto</th>
+                <th>Talla</th>
+                <th>Precio</th>
+            </tr>
+            <tbody id="tableBody">
+            </tbody>     
+        </table>
+    </div>
+</div>
+        </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-left">
+                <h2>BODAS & EVENTOS</h2>
+                <h5>LUCE ESPECTACULAR CON NOSOTROS</h5>
+            </div>
+            <div class="footer-center">
+                <!-- <a href="#">Política de Privacidad</a> -->
+                <a href="https://www.google.com/maps/place/Cl.+11+%231-63,+Cúcuta,+Norte+de+Santander/@7.8869489,-72.5030012,16z/data=!4m6!3m5!1s0x8e66459e314d025f:0x70699452fc9ca966!8m2!3d7.8864917!4d-72.5002041!16s%2Fg%2F11spmz79wj?entry=ttu"
+                    target="_blank">Donde Encontrarnos</a>
+                <!-- <a href="#">Términos de Uso</a>
+                <a href="#">Preguntas y Respuestas</a> -->
+            </div>
+            <div class="footer-right">
+                <a href="#">Contacto</a>
+                <div class="redes">
+                    <a href="https://www.facebook.com/bodas.eventos11/?locale=es_LA" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cucutabodasyeventos/?hl=es" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/yl10zh" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2023 BODAS Y EVENTOS. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>
