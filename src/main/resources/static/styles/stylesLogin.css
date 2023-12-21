@@ -98,3 +98,7 @@ body::before {
     text-align: center;
     font-family: "Work Sans";
 }
+
+a{
+    color: #fff;
+}
