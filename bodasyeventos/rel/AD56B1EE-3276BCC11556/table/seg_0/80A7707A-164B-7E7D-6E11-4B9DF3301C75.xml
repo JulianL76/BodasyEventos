@@ -29,58 +29,14 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="talla" id="F4517E41-4437-0EEE-EDC8-75B768BAE21C">
+<Column name="cantidadTotal" id="DA14AEF9-9FF4-D7BE-F100-D2B4A7D354BA">
 <createdBy>PC</createdBy>
-<createdTime>2023-10-23 02:50:48 UTC</createdTime>
-<ownerDesignName>bodasyeventos</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="cantidad" id="1F866E29-DCFC-64B0-40C2-9B9935FAF835">
-<createdBy>PC</createdBy>
-<createdTime>2023-10-23 02:50:48 UTC</createdTime>
-<ownerDesignName>bodasyeventos</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="precioAlquiler" id="097BEE99-9CA0-0FD2-DB21-4761DD40E0E7">
-<createdBy>PC</createdBy>
-<createdTime>2023-10-23 02:52:13 UTC</createdTime>
+<createdTime>2023-10-30 13:52:17 UTC</createdTime>
 <ownerDesignName>bodasyeventos</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="valorDeposito" id="B43A405F-B071-F141-2060-205D7CE76DD8">
-<createdBy>PC</createdBy>
-<createdTime>2023-10-23 02:52:13 UTC</createdTime>
-<ownerDesignName>bodasyeventos</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="cantDisponible" id="2B34D074-58B0-A432-FE26-01100C77A522">
-<createdBy>PC</createdBy>
-<createdTime>2023-10-23 02:52:13 UTC</createdTime>
-<ownerDesignName>bodasyeventos</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -96,6 +52,17 @@
 <associations>
 <colAssociation fkAssociation="481EB659-52A8-15DE-0F55-D8A8BA6B5DAB" referredColumn="E05F7458-CB8C-6213-0F5C-29F73EBACC54"/>
 </associations>
+</Column>
+<Column name="imagenes" id="11AD2684-E5AF-DA57-10F2-7C2AE427C058">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 13:05:12 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

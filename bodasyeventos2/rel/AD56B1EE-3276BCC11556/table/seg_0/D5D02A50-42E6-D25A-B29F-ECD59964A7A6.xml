@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D5D02A50-42E6-D25A-B29F-ECD59964A7A6" name="UnidadxAlquiler">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 12:07:35 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<ordsAlias>table_17</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idUnidad" id="2FDCC138-E5AF-4907-A016-3A3114EA1769">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 12:08:07 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="071D14B7-B7D9-CC74-BA55-88DF728C955E" referredColumn="D65732C3-377A-A013-CF24-89D93B33C6BE"/>
+</associations>
+</Column>
+<Column name="idAlquiler" id="793D7967-9E55-E558-80E7-E2A430483BAB">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 12:08:47 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3C553CC-2973-52A7-9829-933BF513836C" referredColumn="02E4EDCE-420C-CAEC-980E-BC3AE335C4F9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="398D6DA3-8BA7-6462-0400-1015E115940F" name="UnidadxAlquiler_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 12:08:07 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FDCC138-E5AF-4907-A016-3A3114EA1769"/>
+<colUsage columnID="793D7967-9E55-E558-80E7-E2A430483BAB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="337409BB-496B-4949-6A97-7BA08C6863A3" name="UnidadxAlquiler_Alquiler_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 14:03:14 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="793D7967-9E55-E558-80E7-E2A430483BAB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2878985B-5BD7-A8BC-36B4-2A5313CFEC5D" name="UnidadxAlquiler_Unidad_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 14:04:29 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FDCC138-E5AF-4907-A016-3A3114EA1769"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

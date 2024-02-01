@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B6DF7292-047B-3FE8-5373-125737186A0A" name="Unidad">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:37:12 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idTalla" id="22CC984B-AFA1-F851-3123-443B69717925">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:50:24 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Unidad_talla</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="23D4C373-0741-A25D-822A-7479D8385A84" referredColumn="B5584ADB-210B-A357-F9F9-9454317A23F1"/>
+</associations>
+</Column>
+<Column name="idTraje" id="D65732C3-377A-A013-CF24-89D93B33C6BE">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:38:49 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Unidad_idTraje</notNullConstraintName>
+<associations>
+<colAssociation fkAssociation="25FB1F0F-5532-8AC1-BE49-6E47213CCBB2" referredColumn="2954D0D0-30F9-A2C0-848B-8D6F5DA1F232"/>
+</associations>
+</Column>
+<Column name="valorDeposito" id="42CC9CA4-ECB7-448C-D537-5575215E0BC0">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:38:49 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precioAlquiler" id="C4282FF4-008A-353D-65C6-F54E368F9726">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:40:00 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="0D638E87-4CD5-304F-788D-7F6812742BDE">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:46:10 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41AF647A-E301-94FC-D05D-0DC92215CCF6" name="Unidad_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:38:49 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D65732C3-377A-A013-CF24-89D93B33C6BE"/>
+<colUsage columnID="22CC984B-AFA1-F851-3123-443B69717925"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EFD35CB5-4834-61E1-EE4D-D779D31F9F04" name="Unidad_Traje_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:47:52 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D65732C3-377A-A013-CF24-89D93B33C6BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C9EF042D-A941-343E-7AE3-9F281DB536A9" name="Unidad_Talla_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 11:52:24 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="22CC984B-AFA1-F851-3123-443B69717925"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

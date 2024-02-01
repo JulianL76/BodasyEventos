@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD87F2DF-18D3-A8DF-42DC-96B473A84DDE" name="Categoria">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:44:07 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idCategoria" id="E05F7458-CB8C-6213-0F5C-29F73EBACC54">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:44:57 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="CEB5E510-F2BF-0361-6E97-23FD7F934530">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:44:57 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2258D23D-878B-75BD-BF4C-01046E29BF0E" name="Categoria_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:52:30 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E05F7458-CB8C-6213-0F5C-29F73EBACC54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

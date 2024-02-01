@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="782D7B41-28FB-C4EF-A8C1-C5B55A55D427" name="Rol_Permiso">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:24:19 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idRol" id="3BCFB074-5598-D656-E840-D22DEFE91B06">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:27:12 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0C683DDA-9EA7-F88E-2DA2-7A3B79685AE8" referredColumn="950D4707-AB6B-2C11-6590-3C6740A7093C"/>
+</associations>
+</Column>
+<Column name="idPermiso" id="04A8D0F1-F812-B605-E900-A422599C1B74">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:27:12 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AC4EAC97-2DAD-9132-6EC3-4580B00711AA" referredColumn="9504ABD8-1FB5-A3AB-F382-5CC1A825FAD2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FE9BB672-AC78-A38C-8590-06EC7419097F" name="Rol_Permiso_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:27:12 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04A8D0F1-F812-B605-E900-A422599C1B74"/>
+<colUsage columnID="3BCFB074-5598-D656-E840-D22DEFE91B06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="135482DE-6D38-F6AE-7C15-05F379A907AB" name="Rol_Permiso_Rol_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:29:03 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3BCFB074-5598-D656-E840-D22DEFE91B06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BD01A699-9019-54F0-E2AB-59C8F9CB4044" name="Rol_Permiso_Permiso_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:29:19 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04A8D0F1-F812-B605-E900-A422599C1B74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

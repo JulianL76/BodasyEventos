@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A4BE16DA-B3D0-0DA1-D6AD-3D0A576CDB48" name="Categoria">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:39:17 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<engineerTo>
+<item key="AD56B1EE-6C32-6195-6DC8-3276BCC11556" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="967B052E-969A-C607-2D02-041A86A2EB63">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:39:34 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<engineerTo>
+<item key="AD56B1EE-6C32-6195-6DC8-3276BCC11556" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="EAE05A99-6CE4-83B9-37B2-C9F39E58A75E">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:40:14 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<engineerTo>
+<item key="AD56B1EE-6C32-6195-6DC8-3276BCC11556" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1A903F90-F468-F578-CD52-81313C40C2AB" name="Categoria PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 02:40:10 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<engineerTo>
+<item key="AD56B1EE-6C32-6195-6DC8-3276BCC11556" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>967B052E-969A-C607-2D02-041A86A2EB63</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

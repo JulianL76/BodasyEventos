@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8FC298F7-9DC0-BCE4-7960-66C692A86BD7" name="Rol">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:04:21 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="950D4707-AB6B-2C11-6590-3C6740A7093C">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:05:47 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="9775E3CC-DA1F-BCC6-342A-A17EADB69CCC">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:05:47 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idPermiso" id="36449EF6-9890-44C8-C335-4BD3A75FA55C">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:09:58 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CAC2B827-E187-F4E7-9946-324D046100C2" name="Rol_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:15:53 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="950D4707-AB6B-2C11-6590-3C6740A7093C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

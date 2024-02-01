@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AB6DBCC6-2126-AD38-6668-77CF586AC1D2" name="Traje_Alquiler">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:47:39 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<ordsAlias>table_20</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idTraje" id="94201BF5-7A3D-1EA0-0775-377A4DF6ED6E">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:49:38 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="00D9CB04-27F8-45C4-1245-17CE649D8344" referredColumn="2954D0D0-30F9-A2C0-848B-8D6F5DA1F232"/>
+</associations>
+</Column>
+<Column name="idAlquiler" id="4457E427-2467-4308-C4BF-C22E065865E9">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:49:38 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9AD9C398-5EAD-E2C8-876C-D53C583AD83A" referredColumn="02E4EDCE-420C-CAEC-980E-BC3AE335C4F9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="37236809-97DA-C794-85B7-C03DA4A475FE" name="Traje_Alquiler_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:49:38 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4457E427-2467-4308-C4BF-C22E065865E9"/>
+<colUsage columnID="94201BF5-7A3D-1EA0-0775-377A4DF6ED6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="108657B4-5C64-8CC7-176A-3D29620AF9A9" name="Traje_Alquiler_Alquiler_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:50:32 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4457E427-2467-4308-C4BF-C22E065865E9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C8B6BE6-D83E-00C3-F66D-91AD4ABC35F4" name="Traje_Alquiler_Traje_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:50:32 UTC</createdTime>
+<ownerDesignName>bodas</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94201BF5-7A3D-1EA0-0775-377A4DF6ED6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

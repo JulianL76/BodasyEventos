@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F90FBBB-5422-D1DE-990B-D28E9ED6D88E" name="Usuario">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:00:48 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="78890A91-25DB-108D-106F-439BC325E990">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:01:44 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="1B4C00D9-A7F6-35B8-2670-102DBF94703E">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:03:37 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="16967B7B-89B7-7FF6-B83A-AB9331668F87">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:03:37 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contraseña" id="29B46AE2-37AE-4D1A-4B75-621915EF5A30">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:03:37 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idRol" id="72CA3859-387A-6257-CFC8-9676B69F5340">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:16:35 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91A4FBD1-2952-5448-9D52-B2D4BF9BBC6C" referredColumn="950D4707-AB6B-2C11-6590-3C6740A7093C"/>
+</associations>
+</Column>
+<Column name="activo" id="6F15FB5E-ED67-DB13-0810-8F38759FB2D7">
+<createdBy>PC</createdBy>
+<createdTime>2023-11-10 16:27:50 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8D37646D-3E5F-17BE-992C-94057DEFF0D1" name="Usuario_PK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:11:18 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78890A91-25DB-108D-106F-439BC325E990"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05F509CC-8911-B943-1355-53745B2B4B55" name="Usuario_Rol_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:17:41 UTC</createdTime>
+<ownerDesignName>bodasyeventos2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72CA3859-387A-6257-CFC8-9676B69F5340"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

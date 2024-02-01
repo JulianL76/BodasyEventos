@@ -17,6 +17,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Alquiler_id</notNullConstraintName>
 </Column>
 <Column name="fechaInicio" id="2338BD34-2565-2C82-688E-6D594E8A3D1D">
 <createdBy>PC</createdBy>
@@ -26,6 +27,17 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="diasAlquilado" id="C4FA97B2-B7C9-9937-AEB8-112E7BC95B81">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-30 13:49:21 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -51,7 +63,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="deposito" id="A0963502-DD3E-2B2A-C374-21598357740F">
+<Column name="depositoSeguro" id="A0963502-DD3E-2B2A-C374-21598357740F">
 <createdBy>PC</createdBy>
 <createdTime>2023-10-23 03:07:17 UTC</createdTime>
 <ownerDesignName>bodasyeventos</ownerDesignName>
@@ -60,18 +72,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="activo" id="9FB83B48-CC87-F4A3-5D60-FD6B4AFB230D">
-<createdBy>PC</createdBy>
-<createdTime>2023-10-23 03:08:14 UTC</createdTime>
-<ownerDesignName>bodasyeventos</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="saldoPendiente" id="4FB94E0A-1FB6-E30F-99AF-E935CC5F8D35">
@@ -85,7 +85,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="idCliente" id="5E58C896-6C8D-6509-9FCC-2A5A2E61B5BC">
+<Column name="cedulaCliente" id="5E58C896-6C8D-6509-9FCC-2A5A2E61B5BC">
 <createdBy>PC</createdBy>
 <createdTime>2023-10-23 03:09:09 UTC</createdTime>
 <ownerDesignName>bodasyeventos</ownerDesignName>
@@ -94,6 +94,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>NNC_Alquiler_idCliente</notNullConstraintName>
 <associations>
 <colAssociation fkAssociation="12848ECF-6B94-9187-2407-99576D33AAAF" referredColumn="ECEC04AC-3080-7EF5-EA64-B739EE25BCDF"/>
 </associations>
@@ -108,6 +109,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46A047B3-A9AC-7BD6-E3A3-8F4B7C990BE1" referredColumn="78890A91-25DB-108D-106F-439BC325E990"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -130,6 +134,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5E58C896-6C8D-6509-9FCC-2A5A2E61B5BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45747580-1A04-2C01-2250-42B3B775A9FF" name="Alquiler_Usuario_FK">
+<createdBy>PC</createdBy>
+<createdTime>2023-10-23 12:33:03 UTC</createdTime>
+<ownerDesignName>bodasyeventos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C74152FF-63B2-0F4F-F4B5-06A086B30C2C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
